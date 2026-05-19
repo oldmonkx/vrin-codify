@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
+import { ArrowRight } from 'lucide-react';
 import { contentDraft } from '../content';
 
-export default function Amenities() {
+interface AmenitiesProps {
+  onDownloadBrochure?: () => void;
+}
+
+export default function Amenities({ onDownloadBrochure }: AmenitiesProps) {
   const [active, setActive] = useState(0);
   const amenityGroups = contentDraft.amenities.groups;
 
@@ -17,18 +22,36 @@ export default function Amenities() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl lg:text-[70px] font-serif tracking-tight font-light text-brand-paper mb-8 leading-[1.1]"
+            className="text-4xl md:text-5xl lg:text-[56px] font-serif tracking-tight font-light text-brand-paper mb-6 leading-[1.15]"
           >
-            Carefully curated <span className="block italic bg-clip-text text-transparent bg-gradient-to-r from-brand-gold-deep to-brand-gold mt-2">lifestyle</span>
+            {contentDraft.amenities.headingLine1}{' '}
+            <span className="italic bg-clip-text text-transparent bg-gradient-to-r from-brand-gold-deep to-brand-gold">
+              {contentDraft.amenities.headingLine2}
+            </span>{' '}
+            <span className="block mt-2 font-serif text-brand-paper">
+              {contentDraft.amenities.headingLine3}
+            </span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.05 }}
+            className="text-base text-brand-paper/70 font-light leading-relaxed mb-8 max-w-xl"
+          >
+            {contentDraft.amenities.description}
+          </motion.p>
+
           <motion.button 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="self-start px-8 py-3.5 bg-brand-gold/8 hover:bg-brand-gold/16 text-brand-gold border border-brand-gold/30 hover:border-brand-gold/60 rounded-full text-sm font-medium tracking-wide transition-all duration-300"
+            onClick={onDownloadBrochure}
+            className="button-primary self-start mt-2 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
           >
-            Explore Amenities
+            {contentDraft.amenities.cta}
+            <ArrowRight size={16} />
           </motion.button>
         </div>
 
@@ -43,13 +66,13 @@ export default function Amenities() {
           {amenityGroups.map((group, index) => {
             const isActive = active === index;
             return (
-              <motion.div
-                layout
+              <div
+
                 key={index}
-                onMouseEnter={() => setActive(index)}
+
                 onClick={() => setActive(index)}
-                transition={{ layout: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }}
-                className={`relative overflow-hidden bg-brand-paper cursor-pointer flex flex-col justify-end
+
+                className={`relative overflow-hidden bg-brand-paper cursor-pointer flex flex-col justify-end transition-[flex,border-radius] duration-[800ms] ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[flex]
                   ${isActive ? "flex-[4] lg:flex-[5] rounded-[2rem]" : "flex-[1] shadow-none rounded-2xl lg:rounded-full"}`}
               >
                 {/* Background Image Container */}
@@ -94,7 +117,7 @@ export default function Amenities() {
                   </div>
 
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </motion.div>

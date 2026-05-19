@@ -19,8 +19,8 @@ export const contentDraft = {
   },
 
   hero: {
-    backgroundImage: '/towebp/3646_Vrindavan_Namishree _Kondapur_Image_18_01.webp',
-    backgroundImageMobile: '/towebp/3646_Vrindavan_Namishree _Kondapur_Image_18_01.webp',
+    backgroundImage: '/optimized/hero-desktop.webp',
+    backgroundImageMobile: '/optimized/hero-mobile.webp',
     logo: '/vrindavan-logo-white.svg',
     eyebrow: '',
     headingLine1: 'Luxury 2/3/4 BHKs',
@@ -52,7 +52,7 @@ export const contentDraft = {
     headingLine2: 'Perfect Home',
     body:
       'Thoughtfully designed residences with panoramic views and premium finishes across 8 iconic towers.',
-    featureImage: '/towebp/3646_Vrindavan_Namishree _Kondapur_Image_15.webp',
+    featureImage: '/optimized/configurations-tower.webp',
     panelTitle: 'Available Configurations',
     cards: [
       {
@@ -90,7 +90,7 @@ export const contentDraft = {
         stat: '1,35,000 Sq.Ft',
         copy:
           'A sanctuary of indulgence draped in vertical gardens — bespoke amenities designed for those who appreciate the finest.',
-        image: '/towebp/3646_Vrindavan_Namishree _Kondapur_Image_09.webp',
+        image: '/optimized/clubhouse.webp',
       },
       {
         subtitle: 'NATURE & TRANQUILITY',
@@ -98,7 +98,7 @@ export const contentDraft = {
         stat: '9.75 Acres',
         copy:
           'Pristine water features, quiet promenades, and lush courtyards — a private oasis at the heart of Kondapur.',
-        image: '/towebp/3646_Vrindavan_Namishree _Kondapur_Image_12.webp',
+        image: '/optimized/greens.webp',
       },
     ],
   },
@@ -106,12 +106,14 @@ export const contentDraft = {
   amenities: {
     headingLine1: 'Carefully curated',
     headingLine2: 'lifestyle',
-    cta: 'Explore Amenities',
+    headingLine3: 'for your loved ones',
+    description: "A private sanctuary of experiences designed to nurture, celebrate, and elevate every moment. Experience a community where world-class amenities harmonize with sprawling green spaces to create a safe, vibrant, and luxurious haven for your family.",
+    cta: 'Download Brochure',
     groups: [
       {
         title: 'NATURE',
         fullTitle: 'Outdoors & Nature',
-        image: '/towebp/3646_Vrindavan_Namishree _Kondapur_Image_12.webp',
+        image: '/optimized/greens.webp',
         items: [
           'Central Courtyard',
           'Amphitheatre',
@@ -124,7 +126,7 @@ export const contentDraft = {
       {
         title: 'SOCIAL',
         fullTitle: 'Social & Lifestyle',
-        image: '/towebp/3646_Vrindavan_Namishree _Kondapur_Image_09.webp',
+        image: '/optimized/clubhouse.webp',
         items: [
           'Entrance Plaza',
           'Concierge Desk',
@@ -136,7 +138,7 @@ export const contentDraft = {
       {
         title: 'FITNESS',
         fullTitle: 'Sports & Fitness',
-        image: '/towebp/3646_Vrindavan_Namishree _Kondapur_Image_21.webp',
+        image: '/optimized/fitness.webp',
         items: [
           'Swimming Pool',
           "Kids' Pool",
@@ -148,7 +150,7 @@ export const contentDraft = {
       {
         title: 'CONVENIENCE',
         fullTitle: 'Convenience',
-        image: '/towebp/3646_Vrindavan_Namishree _Kondapur_Image_25.webp',
+        image: '/optimized/convenience.webp',
         items: [
           'Centralised Kitchen',
           'Pharmacy',
@@ -297,7 +299,7 @@ export const contentDraft = {
         size: '1650 & 2100 Sft',
         details: ['5 Towers · 625 Units', '25 Floors · 6.15 Acres', '50,000 Sft Clubhouse'],
         rera: 'RERA: P02400006832',
-        image: '/towebp/3646_Vrindavan_Namishree _Kondapur_Image_04.webp',
+        image: '/optimized/configurations-tower.webp',
       },
       {
         name: 'Trident',
@@ -306,7 +308,7 @@ export const contentDraft = {
         size: '1650 – 1955 Sft',
         details: ['3 Towers · 330 Units', 'G+23 Floors · 3.5 Acres', '35,000 Sft Clubhouse'],
         rera: 'RERA: P02500003864',
-        image: '/towebp/3646_Vrindavan_Namishree _Kondapur_Image_12.webp',
+        image: '/optimized/greens.webp',
       },
       {
         name: 'Jewel',
@@ -315,7 +317,7 @@ export const contentDraft = {
         size: '1635 – 2305 Sft',
         details: ['154 Units · G+22 Floors', '1.65 Acres', '10,000 Sft Clubhouse'],
         rera: 'RERA: P02500007768',
-        image: '/towebp/3646_Vrindavan_Namishree _Kondapur_Image_21.webp',
+        image: '/optimized/fitness.webp',
       },
       {
         name: 'Twin Towers',
@@ -325,7 +327,7 @@ export const contentDraft = {
         details: ['2 Towers · G+22 Floors', '3 Acres · 35,000 Sft Clubhouse'],
         rera: 'RERA: P02500001997',
         badge: 'Ready To Move',
-        image: '/towebp/3646_Vrindavan_Namishree _Kondapur_Image_25.webp',
+        image: '/optimized/convenience.webp',
       },
     ],
     contactLabel: 'Contact',

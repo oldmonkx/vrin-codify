@@ -1,11 +1,7 @@
 node_modules/
-**/node_modules/
-
 dist/
-**/dist/
-
+.vercel/
 *.log
-**/.devserver.*.log
-
+.codex-vite*.log
+.devserver*.log
 output/
-iloveimg-compressed*/

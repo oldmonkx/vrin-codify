@@ -38,7 +38,7 @@ export default function App() {
       
       <main>
         <Hero onDownloadBrochure={() => openModal("Download Brochure")} />
-        <Amenities />
+        <Amenities onDownloadBrochure={() => openModal("Download Brochure")} />
         <Configurations onGetPrice={() => openModal("Get Price Sheet")} />
         <Highlights />
         <FloorPlans 
