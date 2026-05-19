@@ -1,0 +1,67 @@
+<svg width="1600" height="1200" viewBox="0 0 1600 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg4" x1="174" y1="72" x2="1444" y2="1118" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#251724"/>
+      <stop offset="0.55" stop-color="#191117"/>
+      <stop offset="1" stop-color="#120810"/>
+    </linearGradient>
+    <radialGradient id="glow4" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1240 230) rotate(137.52) scale(586 586)">
+      <stop stop-color="#E8D5AA" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#E8D5AA" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="line4" x1="286" y1="194" x2="1230" y2="930" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8EFD7"/>
+      <stop offset="1" stop-color="#C9A877"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1200" fill="url(#bg4)"/>
+  <rect width="1600" height="1200" fill="url(#glow4)"/>
+
+  <g opacity="0.12">
+    <path d="M0 1020H1600" stroke="#E8D5AA"/>
+    <path d="M0 860H1600" stroke="#E8D5AA"/>
+    <path d="M0 700H1600" stroke="#E8D5AA"/>
+    <path d="M0 540H1600" stroke="#E8D5AA"/>
+    <path d="M0 380H1600" stroke="#E8D5AA"/>
+    <path d="M0 220H1600" stroke="#E8D5AA"/>
+    <path d="M240 0V1200" stroke="#E8D5AA"/>
+    <path d="M400 0V1200" stroke="#E8D5AA"/>
+    <path d="M560 0V1200" stroke="#E8D5AA"/>
+    <path d="M720 0V1200" stroke="#E8D5AA"/>
+    <path d="M880 0V1200" stroke="#E8D5AA"/>
+    <path d="M1040 0V1200" stroke="#E8D5AA"/>
+    <path d="M1200 0V1200" stroke="#E8D5AA"/>
+  </g>
+
+  <g transform="translate(250 176)">
+    <path d="M52 0H1026V734H840V860H560V940H164V860H0V256H52V0Z" fill="#1B111C" stroke="url(#line4)" stroke-width="16"/>
+    <rect x="94" y="82" width="224" height="220" rx="18" fill="#24152A" stroke="#E8D5AA" stroke-opacity="0.88" stroke-width="10"/>
+    <rect x="366" y="82" width="224" height="220" rx="18" fill="#24152A" stroke="#E8D5AA" stroke-opacity="0.88" stroke-width="10"/>
+    <rect x="638" y="82" width="164" height="220" rx="18" fill="#24152A" stroke="#E8D5AA" stroke-opacity="0.88" stroke-width="10"/>
+    <rect x="850" y="82" width="122" height="220" rx="18" fill="#24152A" stroke="#E8D5AA" stroke-opacity="0.88" stroke-width="10"/>
+    <rect x="94" y="350" width="344" height="222" rx="18" fill="#24152A" stroke="#E8D5AA" stroke-opacity="0.88" stroke-width="10"/>
+    <rect x="486" y="350" width="486" height="222" rx="18" fill="#24152A" stroke="#E8D5AA" stroke-opacity="0.88" stroke-width="10"/>
+    <rect x="94" y="620" width="224" height="178" rx="18" fill="#24152A" stroke="#E8D5AA" stroke-opacity="0.88" stroke-width="10"/>
+    <rect x="366" y="620" width="234" height="120" rx="18" fill="#24152A" stroke="#E8D5AA" stroke-opacity="0.88" stroke-width="10"/>
+    <rect x="648" y="620" width="190" height="120" rx="18" fill="#24152A" stroke="#E8D5AA" stroke-opacity="0.88" stroke-width="10"/>
+    <path d="M206 302V350" stroke="#C9A877" stroke-width="12"/>
+    <path d="M478 302V350" stroke="#C9A877" stroke-width="12"/>
+    <path d="M716 302V350" stroke="#C9A877" stroke-width="12"/>
+    <path d="M910 302V350" stroke="#C9A877" stroke-width="12"/>
+    <path d="M194 798V860" stroke="#C9A877" stroke-width="12"/>
+    <path d="M560 798V940" stroke="#C9A877" stroke-width="12"/>
+
+    <text x="138" y="208" fill="#F7EBD0" font-family="Georgia, serif" font-size="30" font-style="italic">Master</text>
+    <text x="418" y="208" fill="#F7EBD0" font-family="Georgia, serif" font-size="30" font-style="italic">Bedroom</text>
+    <text x="674" y="208" fill="#F7EBD0" font-family="Georgia, serif" font-size="28" font-style="italic">Study</text>
+    <text x="866" y="208" fill="#F7EBD0" font-family="Georgia, serif" font-size="24" font-style="italic">Dress</text>
+    <text x="176" y="480" fill="#F7EBD0" font-family="Georgia, serif" font-size="34" font-style="italic">Living Lounge</text>
+    <text x="642" y="480" fill="#F7EBD0" font-family="Georgia, serif" font-size="34" font-style="italic">Dining Suite</text>
+    <text x="138" y="728" fill="#F7EBD0" font-family="Georgia, serif" font-size="26" font-style="italic">Kitchen</text>
+    <text x="420" y="698" fill="#F7EBD0" font-family="Georgia, serif" font-size="24" font-style="italic">Powder</text>
+    <text x="698" y="698" fill="#F7EBD0" font-family="Georgia, serif" font-size="24" font-style="italic">Deck</text>
+  </g>
+
+  <text x="114" y="136" fill="#C9A877" font-family="Arial, sans-serif" font-size="34" letter-spacing="10">PREMIUM RESIDENCE</text>
+</svg>
