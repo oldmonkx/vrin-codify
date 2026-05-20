@@ -50,7 +50,7 @@ export default function Configurations({ onGetPrice }: { onGetPrice: () => void 
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="mt-6"
               >
-                <p className="text-white/80 font-light text-sm md:text-base tracking-wide leading-relaxed border-l border-brand-gold/40 pl-5">
+                <p className="text-white/80 font-light text-sm md:text-base tracking-wide leading-relaxed">
                   {configurationsContent.body}
                 </p>
               </motion.div>

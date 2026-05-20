@@ -16,10 +16,10 @@ const SpecRow: React.FC<SpecRowProps> = ({ title, desc, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.45, delay: index * 0.03, ease: [0.16, 1, 0.3, 1] }}
-      className="border-t border-white/6 py-5 first:border-t-0 first:pt-0"
+      className="border-t border-brand-gold/12 py-5 first:border-t-0 first:pt-0"
     >
-      <p className="text-[11px] uppercase tracking-[0.24em] text-brand-gold/74">{title}</p>
-      <p className="mt-3 text-sm leading-7 text-brand-ink-light/84">{desc}</p>
+      <p className="text-[11px] uppercase tracking-[0.24em] text-brand-gold-deep">{title}</p>
+      <p className="mt-3 text-sm leading-7 text-brand-paper/72">{desc}</p>
     </motion.div>
   );
 };
@@ -31,20 +31,24 @@ export default function Specifications({ onDownload }: { onDownload: () => void 
   const hiddenSpecs = specificationsContent.hidden;
 
   return (
-    <section className="py-20 md:py-28 border-t border-brand-gold/10 bg-brand-paper/84">
-      <div className="container mx-auto px-6">
+    <section className="relative overflow-hidden py-20 md:py-28 border-t border-brand-gold/10 bg-brand-cream">
+      <div className="absolute inset-0 bg-pattern-luxury opacity-60 pointer-events-none" />
+      <div className="absolute left-0 top-0 h-56 w-56 bg-[radial-gradient(circle,rgba(201,168,119,0.18)_0%,rgba(201,168,119,0.07)_38%,transparent_72%)] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 h-64 w-64 bg-[radial-gradient(circle,rgba(232,213,170,0.16)_0%,rgba(232,213,170,0.04)_42%,transparent_76%)] pointer-events-none" />
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="lg:hidden">
           <div className="max-w-lg">
-            <h2 className="mt-5 text-[2.3rem] font-light leading-[0.95] text-brand-ink">
+            <h2 className="mt-5 text-[2.3rem] font-light leading-[0.95] text-brand-paper">
               {specificationsContent.mobileHeadingLine1}
-              <span className="mt-2 block font-serif italic text-brand-ink-light">{specificationsContent.mobileHeadingLine2}</span>
+              <span className="mt-2 block font-serif italic text-brand-gold-deep">{specificationsContent.mobileHeadingLine2}</span>
             </h2>
-            <p className="mt-4 max-w-sm text-sm leading-7 text-brand-ink-light/78">
+            <p className="mt-4 max-w-sm text-sm leading-7 text-brand-paper/70">
               {specificationsContent.body}
             </p>
           </div>
 
-          <div className="ads-mobile-card mt-5 rounded-[1.55rem] p-4">
+          <div className="mt-5 rounded-[1.55rem] border border-brand-gold/18 bg-white/72 p-4 shadow-[0_18px_40px_rgba(92,68,42,0.12)] backdrop-blur-sm">
             <div className="space-y-4">
               {visibleSpecs.slice(0, 3).map((spec, index) => (
                 <SpecRow key={spec.title} title={spec.title} desc={spec.desc} index={index} />
@@ -86,11 +90,11 @@ export default function Specifications({ onDownload }: { onDownload: () => void 
         <div className="hidden lg:block">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div className="max-w-3xl">
-              <h2 className="mt-5 text-4xl font-light leading-[0.98] text-brand-ink sm:text-5xl lg:text-[4rem]">
+              <h2 className="mt-5 text-4xl font-light leading-[0.98] text-brand-paper sm:text-5xl lg:text-[4rem]">
                 {specificationsContent.desktopHeadingLine1}
-                <span className="ml-3 font-serif italic text-brand-ink-light">{specificationsContent.desktopHeadingLine2}</span>
+                <span className="ml-3 font-serif italic text-brand-gold-deep">{specificationsContent.desktopHeadingLine2}</span>
               </h2>
-              <p className="mt-5 text-sm leading-7 text-brand-ink-light sm:text-base">
+              <p className="mt-5 text-sm leading-7 text-brand-paper/70 sm:text-base">
                 {specificationsContent.body}
               </p>
             </div>
@@ -100,7 +104,7 @@ export default function Specifications({ onDownload }: { onDownload: () => void 
             </button>
           </div>
 
-          <div className="editorial-panel mt-10 rounded-[2rem] p-6 md:p-8">
+          <div className="mt-10 rounded-[2rem] border border-brand-gold/18 bg-white/74 p-6 shadow-[0_24px_58px_rgba(92,68,42,0.12)] backdrop-blur-sm md:p-8">
             <div className="grid gap-x-10 lg:grid-cols-2">
               {visibleSpecs.map((spec, index) => (
                 <SpecRow key={spec.title} title={spec.title} desc={spec.desc} index={index} />

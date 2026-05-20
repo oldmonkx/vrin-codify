@@ -117,21 +117,6 @@ export default function Hero({ onDownloadBrochure }: HeroProps) {
             ))}
           </div>
 
-          {/* Mobile Enquire Anchor (Above the fold visibility) */}
-          <div className="mt-8 md:hidden">
-            <a
-              href="#hero-name"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('hero-name')?.focus();
-                document.getElementById('hero-name')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              }}
-              className="button-secondary w-full flex justify-center items-center"
-            >
-              {heroContent.form.submitLabel}
-            </a>
-          </div>
-
           {/* RERA inline */}
           <div className="mt-8 flex items-center gap-4 rounded-2xl border border-brand-gold/12 bg-brand-paper/90 px-5 py-3 max-w-fit">
             <div>

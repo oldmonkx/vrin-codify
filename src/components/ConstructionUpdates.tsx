@@ -31,13 +31,17 @@ const videos: VideoItem[] = [
   },
   {
     id: '60JfcX3b6lo',
-    title: 'Vrindavan - Construction Begins',
+    title: 'Vrindavan Construction Update',
     month: 'Pilot Update',
   },
 ];
 
 function getEmbedUrl(videoId: string) {
   return `https://www.youtube.com/embed/${videoId}?rel=0&modestbranding=1`;
+}
+
+function getThumbnailUrl(videoId: string) {
+  return `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
 }
 
 export default function ConstructionUpdates() {
@@ -132,8 +136,20 @@ export default function ConstructionUpdates() {
                       : 'bg-white hover:bg-brand-cream-deep'
                   }`}
                 >
-                  <span className="relative flex-shrink-0 mt-0.5 h-16 w-16 rounded-md border border-brand-gold/15 bg-brand-gold/10 text-brand-gold-deep flex items-center justify-center">
-                    <Play size={14} fill="currentColor" className="translate-x-[1px]" />
+                  <span className="relative flex-shrink-0 mt-0.5 h-16 w-24 overflow-hidden rounded-md border border-brand-gold/15 bg-brand-paper shadow-sm">
+                    <img
+                      src={getThumbnailUrl(video.id)}
+                      alt={`${video.title} preview`}
+                      loading="lazy"
+                      referrerPolicy="no-referrer"
+                      className="h-full w-full object-cover"
+                    />
+                    <span className="absolute inset-0 bg-gradient-to-r from-brand-paper/12 to-brand-paper/34" />
+                    <span className="absolute inset-0 flex items-center justify-center text-white">
+                      <span className="flex h-7 w-7 items-center justify-center rounded-full bg-brand-paper/70 backdrop-blur-sm">
+                        <Play size={11} fill="currentColor" className="translate-x-[1px]" />
+                      </span>
+                    </span>
                   </span>
 
                   <div className="min-w-0">
