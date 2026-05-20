@@ -8,7 +8,7 @@ Read this first before making new copy, image, section-order, CTA, or modal chan
 
 The main source of truth for user-facing content is:
 
-- [src/content.ts](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/content.ts)
+- `src/content.ts`
 
 Use that file first for:
 
@@ -92,26 +92,27 @@ These areas now read from `content.ts` and should be edited there first:
 
 Important layout / behavior files:
 
-- [src/App.tsx](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/App.tsx)
+- `src/App.tsx`
   - section order
   - app-level modal opening logic
-- [src/components/Header.tsx](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/components/Header.tsx)
-- [src/components/Hero.tsx](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/components/Hero.tsx)
-- [src/components/ProjectHighlights.tsx](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/components/ProjectHighlights.tsx)
-- [src/components/Configurations.tsx](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/components/Configurations.tsx)
-- [src/components/Highlights.tsx](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/components/Highlights.tsx)
-- [src/components/Amenities.tsx](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/components/Amenities.tsx)
-- [src/components/FloorPlans.tsx](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/components/FloorPlans.tsx)
-- [src/components/Location.tsx](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/components/Location.tsx)
-- [src/components/Specifications.tsx](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/components/Specifications.tsx)
-- [src/components/Footer.tsx](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/components/Footer.tsx)
-- [src/components/LeadModal.tsx](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/components/LeadModal.tsx)
+- `src/components/Header.tsx`
+- `src/components/Hero.tsx`
+- `src/components/ProjectHighlights.tsx`
+- `src/components/Configurations.tsx`
+- `src/components/Highlights.tsx`
+- `src/components/Amenities.tsx`
+- `src/components/FloorPlans.tsx`
+- `src/components/Location.tsx`
+- `src/components/ConstructionUpdates.tsx`
+- `src/components/Specifications.tsx`
+- `src/components/Footer.tsx`
+- `src/components/LeadModal.tsx`
 
 ## 4. Image workflow
 
 Live section images should go under:
 
-- [public/optimized](/Users/apple/Desktop/vrindavan-lp/vrin-codify/public/optimized)
+- `public/optimized`
 
 Current highlights images:
 
@@ -129,10 +130,10 @@ If you add or replace an image:
 
 Lead and thank-you behavior files:
 
-- [src/leadCapture.ts](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/leadCapture.ts)
-- [src/tracking.ts](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/tracking.ts)
-- [/.env.production](/Users/apple/Desktop/vrindavan-lp/vrin-codify/.env.production)
-- [/.env.example](/Users/apple/Desktop/vrindavan-lp/vrin-codify/.env.example)
+- `src/leadCapture.ts`
+- `src/tracking.ts`
+- `.env.production`
+- `.env.example`
 
 Important note:
 
@@ -168,12 +169,19 @@ This repo has already had these notable updates:
 - normalized live acreage references to `9.5`
 - centralized most visible copy into `content.ts`
 - fixed multiple places where components were still using hardcoded strings instead of content values
+- added a construction updates section with inline YouTube playback and a thumbnail playlist
+- corrected Vercel preview deployment issues caused by placeholder Git author email
+- removed the extra mobile hero CTA above the fold and relabeled the hero form submit action to `Download Brochure`
+- aligned the `Find Your Perfect Home` intro copy by removing the decorative left rule
+- refined the footer with a brighter luxury treatment while keeping the specifications section layout unchanged
+- merged the `Location` and `Construction Updates` cream backgrounds so the handoff feels seamless
+- simplified the construction updates copy by removing the eyebrow and repeated per-video title labels
 
 ## 7. How to edit safely moving forward
 
 For content-only changes:
 
-1. edit [src/content.ts](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/content.ts)
+1. edit `src/content.ts`
 2. refresh local dev server
 3. verify the live section visually
 
