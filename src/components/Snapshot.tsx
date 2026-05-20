@@ -3,7 +3,7 @@ import { motion } from 'motion/react';
 
 export default function Snapshot() {
   const stats = [
-    { label: "Land Area", value: "9.75", unit: "Acres", colSpan: "md:col-span-2", rowSpan: "md:row-span-2" },
+    { label: "Land Area", value: "9.5", unit: "Acres", colSpan: "md:col-span-2", rowSpan: "md:row-span-2" },
     { label: "Towers", value: "8", unit: "G+52", colSpan: "md:col-span-1", rowSpan: "md:row-span-1" },
     { label: "Total Units", value: "1,846", unit: "Homes", colSpan: "md:col-span-1", rowSpan: "md:row-span-1" },
     { label: "Clubhouse", value: "1.35L", unit: "Sq.Ft", colSpan: "md:col-span-2", rowSpan: "md:row-span-1" },

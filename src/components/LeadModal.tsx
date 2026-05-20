@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Lock } from 'lucide-react';
 import { redirectToThankYou, submitLead } from '../leadCapture';
+import { contentDraft } from '../content';
 
 interface LeadModalProps {
   isOpen: boolean;
@@ -10,6 +11,8 @@ interface LeadModalProps {
 }
 
 export default function LeadModal({ isOpen, onClose, title = "Get Exclusive Access" }: LeadModalProps) {
+  const modalContent = contentDraft.leadModal;
+  const leadFormContent = contentDraft.interactions.leadForms.modal;
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     fullName: '',
@@ -44,20 +47,20 @@ export default function LeadModal({ isOpen, onClose, title = "Get Exclusive Acce
         phone: formData.phone,
         formTitle: title,
         extra: {
-          entryPoint: 'lead-modal',
+          entryPoint: leadFormContent.entryPoint,
         },
       });
 
       resetForm();
       redirectToThankYou({
         formTitle: title,
-        entryPoint: 'lead-modal',
+        entryPoint: leadFormContent.entryPoint,
       });
     } catch (error) {
       console.error('Lead submit failed', error);
       const message = error instanceof Error
         ? error.message
-        : 'We could not submit your details right now. Please try again or contact us directly.';
+        : modalContent.fallbackError;
       setErrorMessage(message);
     } finally {
       setIsLoading(false);
@@ -96,7 +99,7 @@ export default function LeadModal({ isOpen, onClose, title = "Get Exclusive Acce
               <div className="text-center mb-10 mt-2">
                 <h3 className="text-3xl font-sans tracking-tight font-medium mb-3 text-white">{title}</h3>
                 <p className="text-white/50 font-light tracking-wide text-sm">
-                  Instantly receive the brochure, price sheet & floor plans
+                  {modalContent.subtitle}
                 </p>
               </div>
 
@@ -105,7 +108,7 @@ export default function LeadModal({ isOpen, onClose, title = "Get Exclusive Acce
                   <input
                     required
                     type="text"
-                    placeholder="Full Name"
+                    placeholder={modalContent.fullNamePlaceholder}
                     value={formData.fullName}
                     onChange={(e) => setFormData((current) => ({ ...current, fullName: e.target.value }))}
                     className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-white/30 focus:bg-white/10 transition-all duration-300 text-white placeholder:text-white/30 font-light tracking-wide text-sm shadow-inner"
@@ -114,12 +117,12 @@ export default function LeadModal({ isOpen, onClose, title = "Get Exclusive Acce
 
                 <div className="space-y-2 relative group">
                   <div className="relative">
-                    <span className="absolute left-6 top-1/2 -translate-y-1/2 text-white/40 text-sm font-light">+91</span>
+                    <span className="absolute left-6 top-1/2 -translate-y-1/2 text-white/40 text-sm font-light">{modalContent.countryCodePrefix}</span>
                     <input
                       required
                       type="tel"
                       pattern="[0-9]{10}"
-                      placeholder="Phone Number"
+                      placeholder={modalContent.phonePlaceholder}
                       inputMode="numeric"
                       maxLength={10}
                       value={formData.phone}
@@ -143,11 +146,11 @@ export default function LeadModal({ isOpen, onClose, title = "Get Exclusive Acce
                   type="submit"
                   className="w-full py-4 mt-6 rounded-2xl font-medium text-sm tracking-wide transition-all duration-300 active:scale-95 disabled:opacity-50 bg-gradient-to-r from-brand-gold to-brand-gold-deep text-brand-paper shadow-[0_4px_20px_rgba(201,168,119,0.25)] hover:shadow-[0_6px_28px_rgba(201,168,119,0.35)] hover:scale-[1.01]"
                 >
-                  {isLoading ? "Sending..." : "Send Me the Details"}
+                  {isLoading ? modalContent.submittingLabel : modalContent.submitLabel}
                 </button>
 
                 <p className="flex items-center justify-center gap-2 text-[10px] uppercase tracking-widest text-white/30 mt-8 font-medium">
-                  <Lock size={10} /> Your details are private
+                  <Lock size={10} /> {modalContent.privacyLabel}
                 </p>
               </form>
             </div>

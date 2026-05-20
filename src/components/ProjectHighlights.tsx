@@ -10,7 +10,7 @@ export default function ProjectHighlights() {
       id="project-highlights"
       className="relative overflow-hidden border-t border-brand-gold/15 bg-brand-cream py-14 md:py-16 lg:py-18"
     >
-      <div className="absolute inset-0 bg-pattern-starry opacity-45 pointer-events-none" />
+      <div className="absolute inset-0 bg-pattern-starry opacity-55 pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <motion.div

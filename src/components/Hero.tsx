@@ -10,6 +10,7 @@ interface HeroProps {
 
 export default function Hero({ onDownloadBrochure }: HeroProps) {
   const heroContent = contentDraft.hero;
+  const heroLeadContent = contentDraft.interactions.leadForms.heroInline;
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -28,9 +29,9 @@ export default function Hero({ onDownloadBrochure }: HeroProps) {
       await submitLead({
         name: formData.name,
         phone: formData.phone,
-        formTitle: 'Hero Enquiry Form',
+        formTitle: heroLeadContent.title,
         extra: {
-          entryPoint: 'hero-inline-form',
+          entryPoint: heroLeadContent.entryPoint,
           configuration: formData.configuration,
           consent: formData.consent,
         },
@@ -43,8 +44,8 @@ export default function Hero({ onDownloadBrochure }: HeroProps) {
         consent: false,
       });
       redirectToThankYou({
-        formTitle: 'Hero Enquiry Form',
-        entryPoint: 'hero-inline-form',
+        formTitle: heroLeadContent.title,
+        entryPoint: heroLeadContent.entryPoint,
       });
     } catch (error) {
       console.error('Hero lead submit failed', error);

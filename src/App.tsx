@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { contentDraft } from './content';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import ProjectHighlights from './components/ProjectHighlights';
@@ -14,8 +15,9 @@ import MobileBottomBar from './components/MobileBottomBar';
 import LeadModal from './components/LeadModal';
 
 export default function App() {
+  const interactionContent = contentDraft.interactions;
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalTitle, setModalTitle] = useState("Get Exclusive Access");
+  const [modalTitle, setModalTitle] = useState(contentDraft.leadModal.defaultTitle);
   const [isFloorPlansUnlocked, setIsFloorPlansUnlocked] = useState(false);
 
   const openModal = (title?: string) => {
@@ -24,7 +26,7 @@ export default function App() {
   };
 
   const handleUnlockFloorPlans = () => {
-    openModal("Unlock Floor Plans");
+    openModal(interactionContent.modalTitles.downloadFloorPlans);
   };
 
   useEffect(() => {
@@ -35,30 +37,30 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-brand-paper selection:bg-brand-magenta/20 selection:text-brand-ink overflow-x-hidden">
-      <Header onBookVisit={() => openModal("Book a Site Visit")} />
+      <Header onBookVisit={() => openModal(interactionContent.modalTitles.bookSiteVisit)} />
       
       <main>
-        <Hero onDownloadBrochure={() => openModal("Download Brochure")} />
+        <Hero onDownloadBrochure={() => openModal(interactionContent.modalTitles.downloadBrochure)} />
         <ProjectHighlights />
-        <Configurations onGetPrice={() => openModal("Get Price Sheet")} />
-        <Amenities onDownloadBrochure={() => openModal("Download Brochure")} />
+        <Configurations onGetPrice={() => openModal(interactionContent.modalTitles.getPriceSheet)} />
+        <Amenities onDownloadBrochure={() => openModal(interactionContent.modalTitles.downloadBrochure)} />
         <Highlights />
         <FloorPlans 
           isUnlocked={isFloorPlansUnlocked} 
           onUnlock={handleUnlockFloorPlans} 
         />
         <Location />
-        <Specifications onDownload={() => openModal("Download Specifications")} />
+        <Specifications onDownload={() => openModal(interactionContent.modalTitles.downloadSpecifications)} />
       </main>
 
-      <Footer onBookVisit={() => openModal("Book a Site Visit")} />
-      <MobileBottomBar onBrochure={() => openModal("Download Brochure")} />
+      <Footer onBookVisit={() => openModal(interactionContent.modalTitles.bookSiteVisit)} />
+      <MobileBottomBar onBrochure={() => openModal(interactionContent.modalTitles.downloadBrochure)} />
 
       <LeadModal 
         isOpen={isModalOpen} 
         onClose={() => {
           setIsModalOpen(false);
-          if (modalTitle === "Unlock Floor Plans") {
+          if (modalTitle === interactionContent.modalTitles.downloadFloorPlans) {
             setIsFloorPlansUnlocked(true);
           }
         }} 

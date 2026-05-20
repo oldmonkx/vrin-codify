@@ -1,19 +1,11 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { MapPin } from 'lucide-react';
-
-const proximities = [
-  { label: "HITECH City", time: "3 min" },
-  { label: "Financial District", time: "8 min" },
-  { label: "Sancta Maria School", time: "2 min" },
-  { label: "KIMS Hospital", time: "10 min" },
-  { label: "University of Hyderabad", time: "12 min" },
-  { label: "Gachibowli", time: "10 min" },
-  { label: "TCS / Infosys", time: "10-15 min" },
-  { label: "Mumbai Highway", time: "Direct" },
-];
+import { contentDraft } from '../content';
 
 export default function Location() {
+  const locationContent = contentDraft.location;
+  const proximities = locationContent.proximities;
   return (
     <section id="location" className="py-16 md:py-32 bg-brand-cream relative border-t border-brand-gold/15">
       <div className="absolute inset-0 bg-pattern-starry opacity-60 pointer-events-none" />
@@ -24,7 +16,7 @@ export default function Location() {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-[2.25rem] md:text-6xl font-sans tracking-tighter font-medium mb-6 text-brand-paper leading-[1.1]"
           >
-            The Kondapur <span className="font-serif italic bg-clip-text text-transparent bg-gradient-to-r from-brand-gold-deep to-brand-gold font-light">Advantage</span>
+            {locationContent.headingLine1} <span className="font-serif italic bg-clip-text text-transparent bg-gradient-to-r from-brand-gold-deep to-brand-gold font-light">{locationContent.headingLine2}</span>
           </motion.h2>
         </div>
 
@@ -63,9 +55,9 @@ export default function Location() {
             <div className="absolute inset-0 bg-gradient-to-br from-brand-gold-pale/20 to-transparent pointer-events-none" />
             
             <div className="relative z-10 mb-8">
-              <p className="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase text-brand-gold-deep">Nearby in Minutes</p>
+              <p className="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase text-brand-gold-deep">{locationContent.nearbyLabel}</p>
               <p className="mt-3 text-sm md:text-base font-light leading-relaxed text-brand-paper/80">
-                Strategic proximity connecting you to major IT hubs, top educational institutions, and world-class healthcare facilities instantly.
+                {locationContent.body}
               </p>
             </div>
             

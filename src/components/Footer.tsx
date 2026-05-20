@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { contentDraft } from '../content';
 
 export default function Footer({ onBookVisit }: { onBookVisit: () => void }) {
+  const footerContent = contentDraft.footer;
   const otherProjects = contentDraft.footer.otherProjects;
 
   return (
@@ -16,21 +17,21 @@ export default function Footer({ onBookVisit }: { onBookVisit: () => void }) {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-6xl md:text-8xl lg:text-[100px] font-sans tracking-tighter font-medium mb-6 leading-[0.9]"
           >
-            Your Sky-High <br />
-            <span className="font-serif italic text-white/50 font-light">Life Awaits</span>
+            {footerContent.headingLine1} <br />
+            <span className="font-serif italic text-white/50 font-light">{footerContent.headingLine2}</span>
           </motion.h2>
           <p className="text-white/50 text-lg md:text-xl mb-12 font-light tracking-wide">
-            Limited units available across 8 towers. Speak to an advisor today.
+            {footerContent.body}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <button onClick={onBookVisit} className="button-primary">
-              Book a Site Visit
+              {footerContent.primaryCta}
             </button>
             <a
               href="tel:9177634477"
               className="px-8 py-4 bg-transparent border border-brand-gold/30 text-brand-gold/80 rounded-full text-sm font-medium hover:border-brand-gold/60 hover:text-brand-gold transition-all duration-300 tracking-wide"
             >
-              Call: 9177634477
+              {footerContent.callLabel}
             </a>
           </div>
         </div>
@@ -38,7 +39,7 @@ export default function Footer({ onBookVisit }: { onBookVisit: () => void }) {
         <div className="mb-14">
           <div className="flex items-center gap-4 mb-8">
             <span className="h-px flex-1 bg-white/[0.06]" />
-            <span className="text-white/30 text-[10px] font-bold tracking-[0.3em] uppercase whitespace-nowrap">Other Projects by Namishree</span>
+            <span className="text-white/30 text-[10px] font-bold tracking-[0.3em] uppercase whitespace-nowrap">{footerContent.otherProjectsLabel}</span>
             <span className="h-px flex-1 bg-white/[0.06]" />
           </div>
 
@@ -104,62 +105,50 @@ export default function Footer({ onBookVisit }: { onBookVisit: () => void }) {
         <div className="border-t border-white/[0.05] pt-10 pb-8 mb-8">
           <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-center sm:gap-12 sm:text-left">
             <div className="space-y-2">
-              <p className="text-[9px] uppercase tracking-[0.3em] font-bold text-brand-gold/40">Contact</p>
-              <a href="mailto:info@namishree.com" className="block text-white/60 hover:text-white transition-colors text-sm font-light">
-                info@namishree.com
+              <p className="text-[9px] uppercase tracking-[0.3em] font-bold text-brand-gold/40">{footerContent.contactLabel}</p>
+              <a href={`mailto:${footerContent.email}`} className="block text-white/60 hover:text-white transition-colors text-sm font-light">
+                {footerContent.email}
               </a>
-              <a href="https://www.namishree.com" target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white transition-colors text-sm font-light">
-                www.namishree.com
+              <a href={`https://${footerContent.website}`} target="_blank" rel="noopener noreferrer" className="block text-white/60 hover:text-white transition-colors text-sm font-light">
+                {footerContent.website}
               </a>
             </div>
 
             <div className="w-px h-10 bg-brand-gold/15 hidden sm:block" />
 
             <div className="space-y-2">
-              <p className="text-[9px] uppercase tracking-[0.3em] font-bold text-brand-gold/40">Corporate Office</p>
+              <p className="text-[9px] uppercase tracking-[0.3em] font-bold text-brand-gold/40">{footerContent.officeLabel}</p>
               <p className="text-white/60 text-sm font-light leading-relaxed">
-                15th Floor, T19 Towers, Ranigunj
+                {footerContent.officeLines[0]}
                 <br />
-                Secunderabad, Hyderabad - 500003
+                {footerContent.officeLines[1]}
               </p>
             </div>
           </div>
         </div>
 
         <div className="flex flex-wrap justify-center gap-x-5 gap-y-3 mb-4 text-[9px] uppercase tracking-[0.2em] font-medium text-white/25">
-          <span>TGRERA: P02400008653</span>
-          <span>·</span>
-          <span>9.5 Acre Township</span>
-          <span>·</span>
-          <span>1846 Homes</span>
-          <span>·</span>
-          <span>G+49 Floors</span>
-          <span>·</span>
-          <span>Namishree</span>
+          {footerContent.trustBar.map((item, index) => (
+            <React.Fragment key={item}>
+              {index > 0 ? <span>·</span> : null}
+              <span>{item}</span>
+            </React.Fragment>
+          ))}
         </div>
 
         <div className="flex justify-center gap-6 mb-8 text-[9px] uppercase tracking-[0.1em] text-white/20">
-          <a href="/privacy" className="hover:text-white/40 transition-colors">Privacy Policy</a>
-          <a href="/terms" className="hover:text-white/40 transition-colors">Terms of Service</a>
+          <a href="/privacy" className="hover:text-white/40 transition-colors">{footerContent.legalLinks.privacy}</a>
+          <a href="/terms" className="hover:text-white/40 transition-colors">{footerContent.legalLinks.terms}</a>
         </div>
 
         <div className="text-center max-w-3xl mx-auto space-y-3">
           <div className="luxury-rule mb-4" />
           <p className="text-[9px] text-white/22 leading-[1.8] tracking-wide">
-            <span className="font-semibold uppercase tracking-widest text-white/30">Disclaimer:</span>{' '}
-            This advertisement is for informational purposes only and does not constitute an offer or agreement to sell.
-            All visuals, renders, images, floor plans and specifications shown are artist's impressions and are indicative in nature only.
-            Actual product may differ from what is depicted. Sizes mentioned are approximate and subject to change without prior notice.
-            Amenities, features, specifications and project details are proposed and may be altered, modified or withdrawn at the developer's
-            sole discretion in accordance with applicable laws. Buyers are advised to visit the site, verify all details independently and
-            refer to the registered sale agreement for final terms before making any purchase decision.
+            <span className="font-semibold uppercase tracking-widest text-white/30">{footerContent.disclaimerHeading}</span>{' '}
+            {footerContent.disclaimerParagraph1}
           </p>
           <p className="text-[9px] text-white/22 leading-[1.8] tracking-wide">
-            Project registered under TG RERA bearing No.{' '}
-            <span className="text-white/35 font-medium">P02400008653</span>.
-            For details visit <span className="text-white/35">rera.telangana.gov.in</span>.
-            Layout / Building Permission No. File No. 042365/SKP/R1/U6/HMDA.
-            Promoter: Namishree Infrastructure Pvt. Ltd., 15th Floor, T19 Towers, Ranigunj, Secunderabad, Hyderabad - 500003.
+            {footerContent.disclaimerParagraph2}
           </p>
         </div>
       </div>

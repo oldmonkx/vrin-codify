@@ -9,13 +9,48 @@
  */
 
 export const contentDraft = {
+  interactions: {
+    modalTitles: {
+      bookSiteVisit: 'Book a Site Visit',
+      downloadBrochure: 'Download Brochure',
+      getPriceSheet: 'Get Price Sheet',
+      downloadSpecifications: 'Download Specifications',
+      downloadFloorPlans: 'Download Floor Plans',
+    },
+    leadForms: {
+      heroInline: {
+        title: 'Hero Enquiry Form',
+        entryPoint: 'hero-inline-form',
+      },
+      modal: {
+        entryPoint: 'lead-modal',
+      },
+    },
+  },
+
+  header: {
+    logoAlt: 'Namishree',
+    navLinks: [
+      { label: 'Overview', href: '#overview' },
+      { label: 'Residences', href: '#configurations' },
+      { label: 'Amenities', href: '#amenities' },
+      { label: 'Location', href: '#location' },
+    ],
+    ctaMobile: 'Book Visit',
+    ctaDesktop: 'Book Site Visit',
+    mobileMenuCta: 'Book Site Visit',
+    openMenuLabel: 'Open menu',
+    closeMenuLabel: 'Close menu',
+    closeOverlayLabel: 'Close menu overlay',
+  },
+
   seo: {
     title: 'Vrindavan by Namishree · Kondapur, Hyderabad',
     description:
-      'Live in the heart of Kondapur. 8 Towers · G+52 · 9.75 acres · 1846 premium residences. TGRERA P02400008653.',
+      'Live in the heart of Kondapur. 8 Towers · G+52 · 9.5 acres · 1846 premium residences. TGRERA P02400008653.',
     ogTitle: 'Vrindavan by Namishree · Kondapur',
     ogDescription:
-      'Sky-high 2/3/4 BHK residences across 9.75 acres in Kondapur, Hyderabad.',
+      'Sky-high 2/3/4 BHK residences across 9.5 acres in Kondapur, Hyderabad.',
   },
 
   hero: {
@@ -28,7 +63,7 @@ export const contentDraft = {
     body:
       'Live amidst endless sky and architectural grandeur, with a composed address that balances iconic scale and everyday ease.',
     stats: [
-      { label: 'Spread Across', value: '9.75', suffix: 'acres' },
+      { label: 'Spread Across', value: '9.5', suffix: 'acres' },
     ],
     reraLabel: 'TG RERA Registration No.',
     reraNumber: 'P02400008653',
@@ -44,6 +79,19 @@ export const contentDraft = {
         'I authorize Namishree Group and its representatives to contact me via email, SMS, WhatsApp, Google RCS and phone call. This will override my DND/ NDNC registration.',
       submitLabel: 'Enquire Now',
     },
+  },
+
+  leadModal: {
+    defaultTitle: 'Get Exclusive Access',
+    subtitle: 'Instantly receive the brochure, price sheet & floor plans',
+    fullNamePlaceholder: 'Full Name',
+    phonePlaceholder: 'Phone Number',
+    submitLabel: 'Send Me the Details',
+    submittingLabel: 'Sending...',
+    privacyLabel: 'Your details are private',
+    countryCodePrefix: '+91',
+    fallbackError:
+      'We could not submit your details right now. Please try again or contact us directly.',
   },
 
   projectHighlights: {
@@ -83,7 +131,7 @@ export const contentDraft = {
     body:
       'Thoughtfully designed residences with panoramic views and premium finishes across 8 iconic towers.',
     featureImage: '/optimized/configurations-tower.webp',
-    panelTitle: 'Available Configurations',
+    panelTitle: 'Project Configurations',
     cards: [
       {
         type: '2 BHK',
@@ -110,25 +158,28 @@ export const contentDraft = {
   },
 
   highlights: {
-    eyebrow: 'Life at Vrindavan',
     headingLine1: 'Where every detail',
     headingLine2: 'is a luxury.',
+    body:
+      'A composed lifestyle shaped around wellness, greenery, and residences that feel quietly elevated from the moment you arrive.',
     cards: [
       {
-        subtitle: 'WELLNESS & LEISURE',
-        title: 'The Grand Clubhouse',
+        title: 'Clubhouse Life',
         stat: '1,35,000 Sq.Ft',
-        copy:
-          'A sanctuary of indulgence draped in vertical gardens — bespoke amenities designed for those who appreciate the finest.',
-        image: '/optimized/clubhouse.webp',
+        copy: 'Wellness, leisure, co-working, and celebration spaces designed for everyday indulgence.',
+        image: '/optimized/clubhouse-new.webp',
       },
       {
-        subtitle: 'NATURE & TRANQUILITY',
-        title: 'A Sanctuary of Green',
-        stat: '9.75 Acres',
-        copy:
-          'Pristine water features, quiet promenades, and lush courtyards — a private oasis at the heart of Kondapur.',
-        image: '/optimized/greens.webp',
+        title: 'Green Quiet',
+        stat: '9.5 Acres',
+        copy: 'Private courtyards, water features, shaded walks, and calm pockets of green.',
+        image: '/optimized/green-quiet.webp',
+      },
+      {
+        title: 'Home in the Sky',
+        stat: '2, 3 & 4 BHK',
+        copy: 'Thoughtfully finished homes with generous views, elegant interiors, and everyday comfort.',
+        image: '/optimized/home-sky.webp',
       },
     ],
   },
@@ -193,9 +244,8 @@ export const contentDraft = {
   },
 
   floorPlans: {
-    eyebrow: 'Architectural Excellence',
-    headingLine1: 'Masterfully',
-    headingLine2: 'Planned Spaces',
+    headingLine1: 'Thoughtfully Planned',
+    headingLine2: 'Residences',
     body:
       'Get exclusive access to high-resolution master plans, individual unit layouts, detailed dimensions, and facing directions for all 2, 3 & 4 BHK residences.',
     includedLabel: 'Included in the download:',
@@ -205,10 +255,10 @@ export const contentDraft = {
       'Block & Tower Orientations',
     ],
     previewImage: '/optimized/floorplan-preview.webp',
-    lockedTitle: 'Unlock Master Plan',
+    lockedTitle: 'Download Floor Plans',
     lockedBody:
-      'View all detailed BHK layouts, precise dimensions, and exact block orientations.',
-    lockedCta: 'Enquire to Access',
+      'Get access to detailed layouts, unit sizes, tower orientation, and master plan details for Vrindavan.',
+    lockedCta: 'Download Floor Plans',
   },
 
   location: {
@@ -230,12 +280,12 @@ export const contentDraft = {
   },
 
   specifications: {
-    mobileHeadingLine1: 'Keep technical',
-    mobileHeadingLine2: 'proof short',
-    desktopHeadingLine1: 'Technical',
-    desktopHeadingLine2: 'ledger',
+    mobileHeadingLine1: 'Project',
+    mobileHeadingLine2: 'Specification',
+    desktopHeadingLine1: 'Project',
+    desktopHeadingLine2: 'Specification',
     body:
-      'Every residence at Vrindavan is built with best-in-class materials and precision engineering — from seismic-grade structure to premium branded fittings.',
+      'Built with advanced structural engineering, premium finishes, branded fittings, and refined specifications that ensure strength, comfort, and long-lasting luxury.',
     downloadLabel: 'Download Full Specs',
     viewMoreMobileLabel: 'View More Specs',
     viewAllDesktopLabel: 'View All Specifications',
@@ -305,13 +355,21 @@ export const contentDraft = {
       },
       {
         title: 'Landscaping',
-        desc: 'Professionally designed podium garden, water features, tree-lined promenades across 9.75 acres',
+        desc: 'Professionally designed podium garden, water features, tree-lined promenades across 9.5 acres',
       },
       {
         title: 'Smart Home',
         desc: 'Pre-wired for home automation; intercom network connecting apartments to lobby',
       },
     ],
+  },
+
+  mobileBottomBar: {
+    phoneHref: 'tel:9177634477',
+    phoneLabel: 'Call',
+    whatsappHref: 'https://wa.me/919177634477',
+    whatsappLabel: 'WhatsApp',
+    brochureLabel: 'Brochure',
   },
 
   footer: {

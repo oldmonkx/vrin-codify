@@ -60,7 +60,7 @@ export default function Configurations({ onGetPrice }: { onGetPrice: () => void 
             <div className="relative z-10 w-full flex flex-col">
               <div className="pb-6 border-b border-brand-gold/30">
                 <h3 className="text-3xl md:text-[2.25rem] font-serif italic text-white drop-shadow-lg">
-                  Project Configurations
+                  {configurationsContent.panelTitle}
                 </h3>
               </div>
 
@@ -82,7 +82,7 @@ export default function Configurations({ onGetPrice }: { onGetPrice: () => void 
                       onClick={onGetPrice}
                       className="px-4 py-2.5 text-[10px] md:text-xs font-bold uppercase tracking-[0.12em] text-[#120810] bg-[linear-gradient(135deg,#e3c89b_0%,#cdae7c_100%)] hover:bg-none hover:bg-white rounded-full transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-md shrink-0 ml-4 whitespace-nowrap"
                     >
-                      Get Price Sheet
+                      {config.cta}
                     </button>
                   </div>
                 ))}

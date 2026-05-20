@@ -1,20 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'motion/react';
 import { Menu, X } from 'lucide-react';
+import { contentDraft } from '../content';
 
 interface HeaderProps {
   onBookVisit: () => void;
 }
 
-const links = [
-  { label: 'Overview', href: '#overview' },
-  { label: 'Residences', href: '#configurations' },
-  { label: 'Amenities', href: '#amenities' },
-  { label: 'Location', href: '#location' },
-];
-
 export default function Header({ onBookVisit }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const headerContent = contentDraft.header;
+  const links = headerContent.navLinks;
 
   useEffect(() => {
     document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
@@ -29,7 +25,7 @@ export default function Header({ onBookVisit }: HeaderProps) {
         <div className="mx-auto flex h-16 w-[min(100%-1.25rem,1360px)] items-center justify-between px-4 md:px-6">
           {/* Left: Logos */}
           <a href="#overview" className="flex min-w-0 items-center gap-3">
-            <img src="/namishree-logo-white.svg" alt="Namishree" className="h-4 w-auto opacity-90 md:h-5" />
+            <img src="/namishree-logo-white.svg" alt={headerContent.logoAlt} className="h-4 w-auto opacity-90 md:h-5" />
           </a>
 
           {/* Center: Nav links */}
@@ -47,13 +43,13 @@ export default function Header({ onBookVisit }: HeaderProps) {
               onClick={onBookVisit}
               className="inline-flex h-11 flex-none items-center justify-center whitespace-nowrap rounded-full border border-brand-gold/24 bg-brand-paper/50 px-4 text-[0.65rem] font-bold tracking-[0.18em] text-brand-gold-pale uppercase md:h-auto md:px-5 md:py-3 md:text-[0.74rem] md:tracking-[0.16em]"
             >
-              <span className="md:hidden">Book Visit</span>
-              <span className="hidden md:inline">Book Site Visit</span>
+              <span className="md:hidden">{headerContent.ctaMobile}</span>
+              <span className="hidden md:inline">{headerContent.ctaDesktop}</span>
             </button>
 
             <button
               type="button"
-              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-label={isMobileMenuOpen ? headerContent.closeMenuLabel : headerContent.openMenuLabel}
               onClick={() => setIsMobileMenuOpen((open) => !open)}
               className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-brand-gold/12 bg-brand-paper/60 text-brand-ink md:hidden"
             >
@@ -69,7 +65,7 @@ export default function Header({ onBookVisit }: HeaderProps) {
           <>
             <motion.button
               type="button"
-              aria-label="Close menu overlay"
+              aria-label={headerContent.closeOverlayLabel}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -86,7 +82,7 @@ export default function Header({ onBookVisit }: HeaderProps) {
             >
               {/* Mobile logos */}
               <div className="mb-6 flex items-center gap-3">
-                <img src="/namishree-logo-white.svg" alt="Namishree" className="h-4 w-auto opacity-80" />
+                <img src="/namishree-logo-white.svg" alt={headerContent.logoAlt} className="h-4 w-auto opacity-80" />
               </div>
 
               <nav className="space-y-2">
@@ -109,7 +105,7 @@ export default function Header({ onBookVisit }: HeaderProps) {
                 }}
                 className="button-primary mt-6 w-full"
               >
-                Book Site Visit
+                {headerContent.mobileMenuCta}
               </button>
             </motion.div>
           </>
