@@ -80,63 +80,75 @@ export default function LeadModal({ isOpen, onClose, title = "Get Exclusive Acce
             className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           />
 
-          {/* Modal Content - Apple/Dribbble Premium Glassmorphism */}
+          {/* Modal Content - Luxury Geometric */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 40 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 40 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-md bg-zinc-900/80 backdrop-blur-3xl border border-white/10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.1),0_20px_40px_rgba(0,0,0,0.5)] rounded-[2.5rem] overflow-hidden pb-safe"
+            className="relative w-full max-w-md editorial-board rounded-sm overflow-hidden pb-safe"
           >
             <button
               onClick={onClose}
-              className="absolute top-6 right-6 p-2.5 text-white/50 hover:text-white transition-colors z-10 bg-white/5 hover:bg-white/10 rounded-full border border-white/5"
+              className="absolute top-6 right-6 p-2.5 text-white/50 hover:text-white transition-colors z-10 bg-white/5 hover:bg-white/10 rounded-sm border border-white/5"
             >
               <X size={18} strokeWidth={1.5} />
             </button>
 
             <div className="p-8 md:p-10">
               <div className="text-center mb-10 mt-2">
-                <h3 className="text-3xl font-sans tracking-tight font-medium mb-3 text-white">{title}</h3>
-                <p className="text-white/50 font-light tracking-wide text-sm">
+                <h3 className="text-3xl font-sans tracking-tight font-medium mb-3 text-brand-ink">{title}</h3>
+                <p className="text-brand-ink/50 font-light tracking-wide text-sm">
                   {modalContent.subtitle}
                 </p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div className="space-y-2 relative group">
+                <div className="relative group">
                   <input
                     required
                     type="text"
-                    placeholder={modalContent.fullNamePlaceholder}
+                    id="modal-name"
+                    placeholder=" "
                     value={formData.fullName}
                     onChange={(e) => setFormData((current) => ({ ...current, fullName: e.target.value }))}
-                    className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-white/30 focus:bg-white/10 transition-all duration-300 text-white placeholder:text-white/30 font-light tracking-wide text-sm shadow-inner"
+                    className="peer w-full bg-white/5 border border-brand-gold/30 rounded-none px-4 pb-2 pt-6 text-sm text-brand-ink focus:outline-none focus:border-brand-gold focus:shadow-[0_0_15px_rgba(201,168,119,0.15)] transition-all"
                   />
+                  <label 
+                    htmlFor="modal-name"
+                    className="absolute left-4 top-1.5 text-[10px] text-brand-gold/80 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-placeholder-shown:text-brand-ink/40 peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-brand-gold uppercase tracking-widest pointer-events-none"
+                  >
+                    {modalContent.fullNamePlaceholder}
+                  </label>
                 </div>
 
-                <div className="space-y-2 relative group">
-                  <div className="relative">
-                    <span className="absolute left-6 top-1/2 -translate-y-1/2 text-white/40 text-sm font-light">{modalContent.countryCodePrefix}</span>
-                    <input
-                      required
-                      type="tel"
-                      pattern="[0-9]{10}"
-                      placeholder={modalContent.phonePlaceholder}
-                      inputMode="numeric"
-                      maxLength={10}
-                      value={formData.phone}
-                      onChange={(e) => {
-                        const digitsOnly = e.target.value.replace(/\D/g, '').slice(0, 10);
-                        setFormData((current) => ({ ...current, phone: digitsOnly }));
-                      }}
-                      className="w-full pl-16 pr-6 py-4 bg-white/5 border border-white/10 rounded-2xl focus:outline-none focus:border-white/30 focus:bg-white/10 transition-all duration-300 text-white placeholder:text-white/30 font-light tracking-wide text-sm shadow-inner"
-                    />
-                  </div>
+                <div className="relative group">
+                  <span className="absolute left-4 top-[1.35rem] text-brand-ink/60 text-sm pointer-events-none">{modalContent.countryCodePrefix}</span>
+                  <input
+                    required
+                    type="tel"
+                    id="modal-phone"
+                    pattern="[0-9]{10}"
+                    placeholder=" "
+                    inputMode="numeric"
+                    maxLength={10}
+                    value={formData.phone}
+                    onChange={(e) => {
+                      const digitsOnly = e.target.value.replace(/\D/g, '').slice(0, 10);
+                      setFormData((current) => ({ ...current, phone: digitsOnly }));
+                    }}
+                    className="peer w-full bg-white/5 border border-brand-gold/30 rounded-none pl-12 pr-4 pb-2 pt-6 text-sm text-brand-ink focus:outline-none focus:border-brand-gold focus:shadow-[0_0_15px_rgba(201,168,119,0.15)] transition-all"
+                  />
+                  <label 
+                    htmlFor="modal-phone"
+                    className="absolute left-12 top-1.5 text-[10px] text-brand-gold/80 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-placeholder-shown:text-brand-ink/40 peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-brand-gold uppercase tracking-widest pointer-events-none"
+                  >
+                    {modalContent.phonePlaceholder}
+                  </label>
                 </div>
 
                 {errorMessage ? (
-                  <p className="rounded-2xl border border-red-400/25 bg-red-500/10 px-4 py-3 text-sm text-red-100">
+                  <p className="rounded-none border border-red-400/25 bg-red-500/10 px-4 py-3 text-sm text-red-100">
                     {errorMessage}
                   </p>
                 ) : null}
@@ -144,7 +156,7 @@ export default function LeadModal({ isOpen, onClose, title = "Get Exclusive Acce
                 <button
                   disabled={isLoading}
                   type="submit"
-                  className="w-full py-4 mt-6 rounded-2xl font-medium text-sm tracking-wide transition-all duration-300 active:scale-95 disabled:opacity-50 bg-gradient-to-r from-brand-gold to-brand-gold-deep text-brand-paper shadow-[0_4px_20px_rgba(201,168,119,0.25)] hover:shadow-[0_6px_28px_rgba(201,168,119,0.35)] hover:scale-[1.01]"
+                  className="button-primary w-full mt-6 !rounded-none animate-[premium-pulse_2s_ease-in-out_3] disabled:opacity-50 transition-all duration-300"
                 >
                   {isLoading ? modalContent.submittingLabel : modalContent.submitLabel}
                 </button>

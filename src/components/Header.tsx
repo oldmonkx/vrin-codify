@@ -21,7 +21,7 @@ export default function Header({ onBookVisit }: HeaderProps) {
 
   return (
     <>
-      <header className="relative top-0 z-50 w-full border-b border-brand-gold/12" style={{ background: 'linear-gradient(180deg, rgba(30,16,32,1) 0%, rgba(18,8,16,1) 100%)' }}>
+      <header className="sticky top-0 z-50 w-full border-b border-brand-gold/12 bg-brand-paper/85 backdrop-blur-md">
         <div className="mx-auto flex h-16 w-[min(100%-1.25rem,1360px)] items-center justify-between px-4 md:px-6">
           {/* Left: Logos */}
           <a href="#overview" className="flex min-w-0 items-center gap-3">

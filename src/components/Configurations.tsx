@@ -50,7 +50,7 @@ export default function Configurations({ onGetPrice }: { onGetPrice: () => void 
                 transition={{ delay: 0.2, duration: 0.8 }}
                 className="mt-6"
               >
-                <p className="text-white/80 font-light text-sm md:text-base tracking-wide leading-relaxed border-l border-brand-gold/40 pl-5">
+                <p className="text-white/80 font-light text-sm md:text-base tracking-wide leading-relaxed">
                   {configurationsContent.body}
                 </p>
               </motion.div>
@@ -68,21 +68,24 @@ export default function Configurations({ onGetPrice }: { onGetPrice: () => void 
                 {configs.map((config, index) => (
                   <div
                     key={config.type}
-                    className={`grid grid-cols-[1fr_auto_auto] md:grid-cols-[1.2fr_1.5fr_auto] gap-4 items-center py-5 ${
+                    className={`flex flex-col md:grid md:grid-cols-[1.2fr_1.5fr_auto] gap-4 items-start md:items-center py-5 px-4 md:px-6 -mx-4 md:-mx-6 hover:bg-brand-surface/40 hover:-translate-y-[2px] transition-all duration-300 rounded-lg ${
                       index !== configs.length - 1 ? 'border-b border-white/15' : ''
                     }`}
                   >
-                    <p className="text-lg md:text-[1.35rem] font-medium tracking-[0.03em] text-white">
-                      {config.type}
-                    </p>
-                    <p className="text-sm md:text-base font-normal text-white/70">
-                      {config.size}
-                    </p>
+                    <div className="flex flex-col md:flex-row md:contents w-full gap-1 md:gap-0">
+                      <p className="text-lg md:text-[1.35rem] font-medium tracking-[0.03em] text-white">
+                        {config.type}
+                      </p>
+                      <p className="text-sm md:text-base font-normal text-white/70">
+                        {config.size}
+                      </p>
+                    </div>
                     <button
                       onClick={onGetPrice}
-                      className="px-4 py-2.5 text-[10px] md:text-xs font-bold uppercase tracking-[0.12em] text-[#120810] bg-[linear-gradient(135deg,#e3c89b_0%,#cdae7c_100%)] hover:bg-none hover:bg-white rounded-full transition-all duration-300 hover:scale-[1.03] active:scale-[0.98] shadow-md shrink-0 ml-4 whitespace-nowrap"
+                      className="button-primary w-full md:w-auto mt-2 md:mt-0 !py-3 md:!py-2.5"
                     >
                       {config.cta}
+                      <ArrowRight size={14} className="hidden md:inline-block" />
                     </button>
                   </div>
                 ))}

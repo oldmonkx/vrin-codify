@@ -30,7 +30,7 @@ export default function Location() {
           >
             <div className="relative h-[320px] w-full overflow-hidden rounded-[1.5rem] sm:h-[360px] lg:h-full lg:min-h-[400px]">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.629365990279!2d78.33277872516702!3d17.477444933425236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93d45182655b%3A0x25d482f08958ab61!2sVrindavan%20by%20Namishree%20Marketing%20and%20Sale%20Office!5e0!3m2!1sen!2sin!4v1776705365388!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.629365990279!2d78.33277872516702!3d17.477444933425236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93d45182655b%3A0x25d482f08958ab61!2sVrindavan%20by%20Namishree%20Marketing%20and%20Sale%20Office!5e0!3m2!1sen!2sin!4v1747760000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
                 style={{ border: 0, display: 'block' }}

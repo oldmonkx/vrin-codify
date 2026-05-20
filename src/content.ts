@@ -77,7 +77,7 @@ export const contentDraft = {
       configurationOptions: ['2 BHK', '3 BHK', '4 BHK'],
       consent:
         'I authorize Namishree Group and its representatives to contact me via email, SMS, WhatsApp, Google RCS and phone call. This will override my DND/ NDNC registration.',
-      submitLabel: 'Enquire Now',
+      submitLabel: 'Download Brochure',
     },
   },
 
