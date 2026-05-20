@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Play } from 'lucide-react';
+import { ExternalLink, Play } from 'lucide-react';
 
 interface VideoItem {
   id: string;
@@ -36,18 +36,13 @@ const videos: VideoItem[] = [
   },
 ];
 
-function getThumbnailUrl(videoId: string) {
-  return `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+function getYouTubeUrl(videoId: string) {
+  return `https://www.youtube.com/watch?v=${videoId}`;
 }
 
 export default function ConstructionUpdates() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isPlaying, setIsPlaying] = useState(false);
   const activeVideo = videos[activeIndex];
-
-  useEffect(() => {
-    setIsPlaying(false);
-  }, [activeIndex]);
 
   return (
     <section
@@ -87,47 +82,36 @@ export default function ConstructionUpdates() {
             transition={{ duration: 0.45 }}
             className="lg:flex-[3]"
           >
-            <div className="relative w-full aspect-video overflow-hidden shadow-lg border border-brand-gold/20 bg-brand-paper">
-              {isPlaying ? (
-                <iframe
-                  key={activeVideo.id + activeIndex}
-                  src={`https://www.youtube.com/embed/${activeVideo.id}?rel=0&modestbranding=1`}
-                  title={activeVideo.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full"
-                />
-              ) : (
-                <button
-                  type="button"
-                  onClick={() => setIsPlaying(true)}
-                  className="absolute inset-0 group"
-                  aria-label={`Play ${activeVideo.title}`}
-                >
-                  <img
-                    src={getThumbnailUrl(activeVideo.id)}
-                    alt={activeVideo.title}
-                    className="absolute inset-0 h-full w-full object-cover"
-                    loading="lazy"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/20 to-transparent" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full border border-white/25 bg-white/15 text-white backdrop-blur-sm transition-transform duration-200 group-hover:scale-105">
-                      <Play size={22} fill="currentColor" className="ml-1" />
-                    </div>
-                  </div>
-                  <div className="absolute bottom-4 left-4 right-4 text-left">
-                    <p className="text-[10px] tracking-[0.25em] uppercase text-white/70 font-sans">
-                      Tap to play
-                    </p>
-                    <p className="mt-1 text-sm md:text-base font-light text-white">
-                      {activeVideo.month}
-                    </p>
-                  </div>
-                </button>
-              )}
+            <div className="relative overflow-hidden shadow-lg border border-brand-gold/20 bg-brand-paper p-6 md:p-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-gold/5 via-transparent to-transparent pointer-events-none" />
+              <div className="relative z-10 flex flex-col justify-between gap-6 min-h-[320px] md:min-h-[360px]">
+                <div>
+                  <p className="text-[10px] tracking-[0.25em] uppercase text-brand-gold-deep mb-3 font-sans">
+                    Featured Update
+                  </p>
+                  <h3 className="text-2xl md:text-3xl font-sans tracking-tight font-medium text-brand-paper leading-tight">
+                    {activeVideo.title}
+                  </h3>
+                  <p className="mt-3 text-sm md:text-base text-brand-paper/70 leading-relaxed max-w-xl">
+                    Open the full YouTube video directly for the latest construction progress from Vrindavan.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap items-center gap-3">
+                  <a
+                    href={getYouTubeUrl(activeVideo.id)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-brand-gold-deep px-5 py-3 text-sm font-medium text-white shadow-sm transition-transform duration-150 hover:-translate-y-0.5"
+                  >
+                    <Play size={14} fill="currentColor" />
+                    Watch on YouTube
+                  </a>
+                  <span className="text-sm text-brand-paper/50">
+                    {activeVideo.month}
+                  </span>
+                </div>
+              </div>
             </div>
 
             <div className="mt-2.5 flex items-center gap-2">
@@ -161,7 +145,6 @@ export default function ConstructionUpdates() {
                   id={`construction-video-${index}`}
                   onClick={() => {
                     setActiveIndex(index);
-                    setIsPlaying(false);
                   }}
                   className={`w-full flex items-start gap-3 px-4 py-3.5 text-left transition-colors duration-150 group border-b border-brand-gold/10 last:border-b-0 ${
                     activeIndex === index
@@ -169,18 +152,8 @@ export default function ConstructionUpdates() {
                       : 'bg-white hover:bg-brand-cream-deep'
                   }`}
                 >
-                  <span className="relative flex-shrink-0 mt-0.5 h-16 w-24 overflow-hidden rounded-md border border-brand-gold/15 bg-brand-paper">
-                    <img
-                      src={getThumbnailUrl(video.id)}
-                      alt={`${video.month} thumbnail`}
-                      className="h-full w-full object-cover"
-                      loading="lazy"
-                      referrerPolicy="no-referrer"
-                    />
-                    <span className="absolute inset-0 bg-black/18" />
-                    <span className="absolute inset-0 flex items-center justify-center text-white">
-                      <Play size={12} fill="currentColor" className="translate-x-[1px]" />
-                    </span>
+                  <span className="relative flex-shrink-0 mt-0.5 h-16 w-16 rounded-md border border-brand-gold/15 bg-brand-gold/10 text-brand-gold-deep flex items-center justify-center">
+                    <Play size={14} fill="currentColor" className="translate-x-[1px]" />
                   </span>
 
                   <div className="min-w-0">
@@ -195,6 +168,9 @@ export default function ConstructionUpdates() {
                     </p>
                     <p className="text-[10px] text-brand-paper/40 mt-1">
                       {video.month}
+                    </p>
+                    <p className="mt-2 inline-flex items-center gap-1 text-[10px] uppercase tracking-[0.2em] text-brand-gold-deep">
+                      Open link <ExternalLink size={10} />
                     </p>
                   </div>
                 </button>
