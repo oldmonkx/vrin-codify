@@ -262,8 +262,8 @@ export const contentDraft = {
   },
 
   location: {
-    headingLine1: 'The Kondapur',
-    headingLine2: 'Advantage',
+    headingLine1: 'Location',
+    headingLine2: 'Highlights',
     nearbyLabel: 'Nearby in Minutes',
     body:
       'Strategic proximity connecting you to major IT hubs, top educational institutions, and world-class healthcare facilities instantly.',

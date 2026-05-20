@@ -131,11 +131,15 @@ Lead and thank-you behavior files:
 
 - [src/leadCapture.ts](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/leadCapture.ts)
 - [src/tracking.ts](/Users/apple/Desktop/vrindavan-lp/vrin-codify/src/tracking.ts)
+- [/.env.production](/Users/apple/Desktop/vrindavan-lp/vrin-codify/.env.production)
+- [/.env.example](/Users/apple/Desktop/vrindavan-lp/vrin-codify/.env.example)
 
 Important note:
 
 - some visible modal titles also flow into lead payloads, tracking metadata, and thank-you URL params
 - that is why these labels now live in `contentDraft.interactions`
+- `.env.production` is the committed build config meant to survive across systems
+- `.env.local` is ignored and only for machine-specific overrides
 
 If you rename:
 

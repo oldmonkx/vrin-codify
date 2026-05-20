@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Lock, FileDown } from 'lucide-react';
+import { Lock } from 'lucide-react';
 import { contentDraft } from '../content';
 
 interface FloorPlansProps {
@@ -62,7 +62,7 @@ export default function FloorPlans({ onUnlock, isUnlocked }: FloorPlansProps) {
                   {floorPlanContent.lockedBody}
                 </p>
                 <div className="button-primary px-6 border border-brand-gold/30 py-2.5 text-[10px] pointer-events-none flex items-center gap-2 group-hover:scale-105 transition-transform duration-300">
-                  <FileDown size={14} /> {floorPlanContent.lockedCta}
+                  {floorPlanContent.lockedCta}
                 </div>
               </div>
             </div>

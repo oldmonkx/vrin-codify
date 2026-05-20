@@ -28,7 +28,7 @@ export default function Location() {
             viewport={{ once: true }}
             className="flex-1 rounded-[2rem] overflow-hidden relative group bg-white/80 border border-brand-gold/20 p-2 shadow-xl"
           >
-            <div className="w-full h-full rounded-[1.5rem] overflow-hidden relative" style={{ minHeight: '400px' }}>
+            <div className="relative h-[320px] w-full overflow-hidden rounded-[1.5rem] sm:h-[360px] lg:h-full lg:min-h-[400px]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3805.629365990279!2d78.33277872516702!3d17.477444933425236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb93d45182655b%3A0x25d482f08958ab61!2sVrindavan%20by%20Namishree%20Marketing%20and%20Sale%20Office!5e0!3m2!1sen!2sin!4v1776705365388!5m2!1sen!2sin"
                 width="100%"
@@ -37,10 +37,11 @@ export default function Location() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 h-full w-full"
               />
               {/* Transparent tap overlay — opens Google Maps app on mobile */}
               <a
-                href="https://www.google.com/maps/place/Vrindavan+by+Namishree+Marketing+and+Sale+Office/@17.4774449,78.3327787,17z"
+                href="https://maps.app.goo.gl/4zWbNTQVLEGhrxKj6"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Open in Google Maps"
