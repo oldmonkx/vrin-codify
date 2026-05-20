@@ -1,71 +1,74 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const galleryImages = [
+const slides = [
   {
     src: '/optimized/clubhouse-new.webp',
-    alt: 'Vrindavan Clubhouse — 1,35,000 Sq.Ft of Lifestyle',
-    label: 'Clubhouse',
-    span: 'col-span-2 row-span-2',
+    alt: 'Vrindavan Clubhouse — 1,35,000 Sq.Ft',
+    caption: 'Clubhouse',
+    sub: '1,35,000 Sq.Ft of Lifestyle',
   },
   {
     src: '/optimized/green-quiet.webp',
     alt: 'Landscaped Gardens Across 9.5 Acres',
-    label: 'Green Quiet',
-    span: 'col-span-1 row-span-1',
+    caption: 'Green Quiet',
+    sub: '9.5 Acres of Curated Landscaping',
   },
   {
     src: '/optimized/home-sky.webp',
     alt: 'Aerial View — Vrindavan Towers, Kondapur',
-    label: 'Aerial View',
-    span: 'col-span-1 row-span-1',
+    caption: 'Aerial View',
+    sub: '8 Towers Rising Above Kondapur',
   },
   {
     src: '/optimized/fitness.webp',
     alt: 'World-Class Fitness & Sports Facilities',
-    label: 'Sports & Fitness',
-    span: 'col-span-1 row-span-1',
+    caption: 'Sports & Fitness',
+    sub: 'Olympic Pool · Courts · Indoor Gym',
   },
   {
     src: '/optimized/greens.webp',
     alt: 'Curated Outdoor Spaces & Nature Trails',
-    label: 'Outdoors & Nature',
-    span: 'col-span-1 row-span-1',
+    caption: 'Outdoors & Nature',
+    sub: 'Amphitheatre · Party Lawn · Pond',
   },
   {
     src: '/optimized/clubhouse.webp',
     alt: 'Premium Clubhouse Social Spaces',
-    label: 'Social Spaces',
-    span: 'col-span-2 row-span-1',
+    caption: 'Social Spaces',
+    sub: 'Banquet · Co-working · Guest Suites',
   },
 ];
 
+const AUTOPLAY_MS = 4500;
+
 export default function Gallery() {
-  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
 
-  const openLightbox = (index: number) => setLightboxIndex(index);
-  const closeLightbox = () => setLightboxIndex(null);
-  const prevImage = () =>
-    setLightboxIndex((i) => (i === null ? null : (i - 1 + galleryImages.length) % galleryImages.length));
-  const nextImage = () =>
-    setLightboxIndex((i) => (i === null ? null : (i + 1) % galleryImages.length));
+  const prev = useCallback(() => setCurrent((c) => (c - 1 + slides.length) % slides.length), []);
+  const next = useCallback(() => setCurrent((c) => (c + 1) % slides.length), []);
 
-  // Keyboard navigation
+  // Autoplay
   useEffect(() => {
-    const handleKey = (e: KeyboardEvent) => {
-      if (lightboxIndex === null) return;
-      if (e.key === 'ArrowLeft') prevImage();
-      if (e.key === 'ArrowRight') nextImage();
-      if (e.key === 'Escape') closeLightbox();
+    if (paused) return;
+    const t = setTimeout(next, AUTOPLAY_MS);
+    return () => clearTimeout(t);
+  }, [current, paused, next]);
+
+  // Keyboard
+  useEffect(() => {
+    const fn = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') prev();
+      if (e.key === 'ArrowRight') next();
     };
-    window.addEventListener('keydown', handleKey);
-    return () => window.removeEventListener('keydown', handleKey);
-  }, [lightboxIndex]);
+    window.addEventListener('keydown', fn);
+    return () => window.removeEventListener('keydown', fn);
+  }, [prev, next]);
 
   return (
     <section id="gallery" className="py-16 md:py-24 bg-brand-paper relative overflow-hidden">
-      {/* Subtle ambient glow */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(201,168,119,0.04)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -74,128 +77,132 @@ export default function Gallery() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mb-10 md:mb-14"
+          className="mb-8 md:mb-12"
         >
           <p className="text-[10px] tracking-[0.25em] uppercase text-brand-gold mb-3 font-sans">
             Life at Vrindavan
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-sans tracking-tight font-light leading-[1.05] text-white">
-            A World Within{' '}
-            <span className="font-serif italic font-light text-gradient">
-              9.5 Acres
-            </span>
-          </h2>
-          <p className="text-brand-ink-light font-light text-sm md:text-base leading-relaxed max-w-xl mt-4">
-            From sky-high views to curated green quiet — discover the spaces crafted for everyday indulgence.
-          </p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-sans tracking-tight font-light leading-[1.05] text-white">
+              A World Within{' '}
+              <span className="font-serif italic font-light text-gradient">9.5 Acres</span>
+            </h2>
+            {/* Desktop nav arrows */}
+            <div className="hidden md:flex items-center gap-3 pb-1">
+              <button
+                onClick={prev}
+                onMouseEnter={() => setPaused(true)}
+                onMouseLeave={() => setPaused(false)}
+                aria-label="Previous image"
+                className="w-10 h-10 flex items-center justify-center border border-brand-gold/30 text-brand-gold hover:bg-brand-gold hover:text-brand-paper transition-colors duration-200"
+              >
+                <ChevronLeft size={18} />
+              </button>
+              <span className="text-brand-ink-muted text-xs tabular-nums font-sans">
+                {String(current + 1).padStart(2, '0')} / {String(slides.length).padStart(2, '0')}
+              </span>
+              <button
+                onClick={next}
+                onMouseEnter={() => setPaused(true)}
+                onMouseLeave={() => setPaused(false)}
+                aria-label="Next image"
+                className="w-10 h-10 flex items-center justify-center border border-brand-gold/30 text-brand-gold hover:bg-brand-gold hover:text-brand-paper transition-colors duration-200"
+              >
+                <ChevronRight size={18} />
+              </button>
+            </div>
+          </div>
         </motion.div>
 
-        {/* Masonry Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 grid-rows-3 gap-2 md:gap-3 h-[420px] md:h-[560px] lg:h-[680px]">
-          {galleryImages.map((img, i) => (
-            <motion.div
-              key={img.src}
-              initial={{ opacity: 0, scale: 0.97 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              onClick={() => openLightbox(i)}
-              className={`${img.span} relative overflow-hidden cursor-pointer group bg-brand-surface`}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        {/* Slider */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="relative overflow-hidden"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+        >
+          {/* Main slide */}
+          <div className="relative w-full aspect-[16/9] md:aspect-[21/9] lg:aspect-[21/8] overflow-hidden bg-brand-surface">
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={slides[current].src}
+                src={slides[current].src}
+                alt={slides[current].alt}
+                initial={{ opacity: 0, scale: 1.04 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.98 }}
+                transition={{ duration: 0.6, ease: 'easeInOut' }}
+                className="absolute inset-0 w-full h-full object-cover"
               />
-              {/* Gold border reveal on hover */}
-              <div className="absolute inset-0 border border-brand-gold/0 group-hover:border-brand-gold/40 transition-colors duration-500 pointer-events-none" />
-              {/* Label overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 bg-gradient-to-t from-black/80 via-black/20 to-transparent translate-y-1 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-400">
-                <span className="text-[9px] md:text-[10px] tracking-[0.2em] uppercase text-brand-gold font-sans">
-                  {img.label}
-                </span>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+            </AnimatePresence>
 
-        {/* Bottom caption */}
-        <p className="text-center text-brand-ink-muted text-[11px] tracking-wider mt-6 font-sans uppercase">
-          Click any image to view full screen
-        </p>
-      </div>
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
 
-      {/* Lightbox */}
-      <AnimatePresence>
-        {lightboxIndex !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center"
-            onClick={closeLightbox}
-          >
-            {/* Image */}
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              onClick={(e) => e.stopPropagation()}
-              className="relative max-w-5xl max-h-[85vh] w-full mx-6"
-            >
-              <img
-                src={galleryImages[lightboxIndex].src}
-                alt={galleryImages[lightboxIndex].alt}
-                className="w-full h-full object-contain max-h-[85vh]"
+            {/* Caption bottom-left */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.35 }}
+                className="absolute bottom-5 left-5 md:bottom-8 md:left-8"
+              >
+                <p className="text-[9px] md:text-[10px] tracking-[0.25em] uppercase text-brand-gold font-sans mb-1">
+                  {slides[current].caption}
+                </p>
+                <p className="text-white text-sm md:text-base font-light font-sans">
+                  {slides[current].sub}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Progress bar */}
+            <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-white/10">
+              <motion.div
+                key={current + '-bar'}
+                initial={{ width: '0%' }}
+                animate={{ width: '100%' }}
+                transition={{ duration: AUTOPLAY_MS / 1000, ease: 'linear' }}
+                className="h-full bg-brand-gold"
               />
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">
-                <p className="text-white text-sm font-sans">{galleryImages[lightboxIndex].alt}</p>
-              </div>
-            </motion.div>
+            </div>
+          </div>
 
-            {/* Controls */}
-            <button
-              onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
-              aria-label="Close gallery"
-              className="absolute top-4 right-4 w-10 h-10 flex items-center justify-center border border-white/20 text-white hover:border-brand-gold hover:text-brand-gold transition-colors duration-200"
-            >
-              <X size={18} />
-            </button>
-            <button
-              onClick={(e) => { e.stopPropagation(); prevImage(); }}
-              aria-label="Previous image"
-              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center border border-white/20 text-white hover:border-brand-gold hover:text-brand-gold transition-colors duration-200"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <button
-              onClick={(e) => { e.stopPropagation(); nextImage(); }}
-              aria-label="Next image"
-              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center border border-white/20 text-white hover:border-brand-gold hover:text-brand-gold transition-colors duration-200"
-            >
-              <ChevronRight size={20} />
-            </button>
-
-            {/* Dot indicators */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              {galleryImages.map((_, idx) => (
+          {/* Dot strip below image */}
+          <div className="flex items-center justify-between mt-4">
+            {/* Dots */}
+            <div className="flex gap-2">
+              {slides.map((_, i) => (
                 <button
-                  key={idx}
-                  onClick={(e) => { e.stopPropagation(); setLightboxIndex(idx); }}
-                  aria-label={`Go to image ${idx + 1}`}
-                  className={`w-1.5 h-1.5 rotate-45 transition-colors duration-200 ${
-                    idx === lightboxIndex ? 'bg-brand-gold' : 'bg-white/30'
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  aria-label={`Go to slide ${i + 1}`}
+                  className={`transition-all duration-300 ${
+                    i === current
+                      ? 'w-6 h-1.5 bg-brand-gold'
+                      : 'w-1.5 h-1.5 rotate-45 bg-white/20 hover:bg-brand-gold/50'
                   }`}
                 />
               ))}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
+            {/* Mobile arrows */}
+            <div className="flex md:hidden items-center gap-3">
+              <button onClick={prev} aria-label="Previous image" className="w-9 h-9 flex items-center justify-center border border-brand-gold/30 text-brand-gold">
+                <ChevronLeft size={16} />
+              </button>
+              <button onClick={next} aria-label="Next image" className="w-9 h-9 flex items-center justify-center border border-brand-gold/30 text-brand-gold">
+                <ChevronRight size={16} />
+              </button>
+            </div>
+          </div>
+        </motion.div>
+      </div>
     </section>
   );
 }
