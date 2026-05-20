@@ -36,7 +36,7 @@ export default function ProjectHighlights() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.08, duration: 0.7 }}
-                    className={`relative flex min-h-[122px] flex-col items-center justify-center px-5 py-6 text-center md:min-h-[132px] lg:px-7 ${
+                    className={`relative flex min-h-[122px] flex-col items-center justify-center px-5 py-6 text-center md:min-h-[132px] lg:px-7 hover:-translate-y-1 hover:bg-white/40 hover:shadow-[0_4px_20px_rgba(201,168,119,0.15)] transition-all duration-300 cursor-default ${
                       !isLast ? 'xl:border-r xl:border-brand-paper/22' : ''
                     }`}
                   >

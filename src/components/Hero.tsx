@@ -117,6 +117,21 @@ export default function Hero({ onDownloadBrochure }: HeroProps) {
             ))}
           </div>
 
+          {/* Mobile Enquire Anchor (Above the fold visibility) */}
+          <div className="mt-8 md:hidden">
+            <a
+              href="#hero-name"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById('hero-name')?.focus();
+                document.getElementById('hero-name')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }}
+              className="button-secondary w-full flex justify-center items-center"
+            >
+              {heroContent.form.submitLabel}
+            </a>
+          </div>
+
           {/* RERA inline */}
           <div className="mt-8 flex items-center gap-4 rounded-2xl border border-brand-gold/12 bg-brand-paper/90 px-5 py-3 max-w-fit">
             <div>
@@ -148,20 +163,29 @@ export default function Hero({ onDownloadBrochure }: HeroProps) {
           </div>
 
           <form className="flex flex-col gap-4" onSubmit={handleHeroSubmit}>
-            <div>
+            <div className="relative group">
               <input 
                 type="text" 
-                placeholder={heroContent.form.namePlaceholder}
+                id="hero-name"
+                placeholder=" "
                 required
                 value={formData.name}
                 onChange={(e) => setFormData((current) => ({ ...current, name: e.target.value }))}
-                className="w-full bg-white/5 border border-brand-gold/15 rounded-xl px-4 py-3.5 text-sm text-brand-ink placeholder:text-brand-ink/40 focus:outline-none focus:border-brand-gold/50 focus:bg-white/10 transition-colors"
+                className="peer w-full bg-white/5 border border-brand-gold/30 rounded-none px-4 pb-2 pt-6 text-sm text-brand-ink focus:outline-none focus:border-brand-gold focus:shadow-[0_0_15px_rgba(201,168,119,0.15)] transition-all"
                />
+              <label 
+                htmlFor="hero-name"
+                className="absolute left-4 top-1.5 text-[10px] text-brand-gold/80 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-placeholder-shown:text-brand-ink/40 peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-brand-gold uppercase tracking-widest pointer-events-none"
+              >
+                {heroContent.form.namePlaceholder}
+              </label>
             </div>
-            <div>
+            
+            <div className="relative group">
               <input 
                 type="tel" 
-                placeholder={heroContent.form.phonePlaceholder}
+                id="hero-phone"
+                placeholder=" "
                 required
                 pattern="[0-9]{10}"
                 inputMode="numeric"
@@ -171,17 +195,25 @@ export default function Hero({ onDownloadBrochure }: HeroProps) {
                   const digitsOnly = e.target.value.replace(/\D/g, '').slice(0, 10);
                   setFormData((current) => ({ ...current, phone: digitsOnly }));
                 }}
-                className="w-full bg-white/5 border border-brand-gold/15 rounded-xl px-4 py-3.5 text-sm text-brand-ink placeholder:text-brand-ink/40 focus:outline-none focus:border-brand-gold/50 focus:bg-white/10 transition-colors"
+                className="peer w-full bg-white/5 border border-brand-gold/30 rounded-none px-4 pb-2 pt-6 text-sm text-brand-ink focus:outline-none focus:border-brand-gold focus:shadow-[0_0_15px_rgba(201,168,119,0.15)] transition-all"
                />
+              <label 
+                htmlFor="hero-phone"
+                className="absolute left-4 top-1.5 text-[10px] text-brand-gold/80 transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:top-4 peer-placeholder-shown:text-brand-ink/40 peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-brand-gold uppercase tracking-widest pointer-events-none"
+              >
+                {heroContent.form.phonePlaceholder}
+              </label>
             </div>
-            <div>
+
+            <div className="relative group">
               <select 
+                id="hero-config"
                 value={formData.configuration}
                 onChange={(e) => setFormData((current) => ({ ...current, configuration: e.target.value }))}
-                className="w-full bg-white/5 border border-brand-gold/15 rounded-xl px-4 py-3.5 text-sm text-brand-ink/80 focus:outline-none focus:border-brand-gold/50 focus:bg-white/10 transition-colors appearance-none cursor-pointer"
+                className="peer w-full bg-white/5 border border-brand-gold/30 rounded-none px-4 pb-2 pt-6 text-sm text-brand-ink focus:outline-none focus:border-brand-gold focus:shadow-[0_0_15px_rgba(201,168,119,0.15)] transition-all appearance-none cursor-pointer"
                 required
               >
-                <option value="" disabled className="bg-brand-surface text-brand-ink">{heroContent.form.configurationPlaceholder}</option>
+                <option value="" disabled className="bg-brand-surface text-brand-ink/50">Select Configuration</option>
                 {heroContent.form.configurationOptions.map((option) => (
                   <option
                     key={option}
@@ -192,24 +224,39 @@ export default function Hero({ onDownloadBrochure }: HeroProps) {
                   </option>
                 ))}
               </select>
+              <label 
+                htmlFor="hero-config"
+                className="absolute left-4 top-1.5 text-[10px] text-brand-gold/80 uppercase tracking-widest pointer-events-none"
+              >
+                {heroContent.form.configurationPlaceholder}
+              </label>
+              {/* Custom select arrow */}
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-gold/60"><path d="m6 9 6 6 6-6"/></svg>
+              </div>
             </div>
             
-            <div className="flex items-start gap-3 mt-2">
-              <input 
-                type="checkbox" 
-                id="consent" 
-                required 
-                checked={formData.consent}
-                onChange={(e) => setFormData((current) => ({ ...current, consent: e.target.checked }))}
-                className="mt-0.5 min-w-[16px] h-4 w-4 rounded-sm border-brand-gold/20 bg-white/5 accent-brand-gold cursor-pointer"
-              />
-              <label htmlFor="consent" className="text-[10px] text-brand-ink/50 leading-relaxed cursor-pointer select-none">
+            <label htmlFor="hero-consent" className="flex items-start gap-3 mt-1 cursor-pointer group min-h-[44px] py-2">
+              <div className="relative flex items-center pt-0.5 shrink-0">
+                <input 
+                  type="checkbox" 
+                  id="hero-consent" 
+                  required 
+                  checked={formData.consent}
+                  onChange={(e) => setFormData((current) => ({ ...current, consent: e.target.checked }))}
+                  className="peer appearance-none h-4 w-4 border border-brand-gold/30 bg-white/5 checked:bg-brand-gold checked:border-brand-gold focus:outline-none focus:ring-1 focus:ring-brand-gold/50 cursor-pointer rounded-none transition-all group-hover:border-brand-gold/60"
+                />
+                <svg className="absolute top-[0.625rem] left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 text-brand-paper pointer-events-none opacity-0 peer-checked:opacity-100 transition-opacity" viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 5L4.5 8.5L13 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <span className="text-[10px] text-brand-ink/50 leading-relaxed select-none group-hover:text-brand-ink/70 transition-colors">
                 {heroContent.form.consent}
-              </label>
-            </div>
+              </span>
+            </label>
 
             {errorMessage ? (
-              <p className="rounded-xl border border-red-400/25 bg-red-500/10 px-4 py-3 text-sm text-red-100">
+              <p className="rounded-none border border-red-400/25 bg-red-500/10 px-4 py-3 text-sm text-red-100">
                 {errorMessage}
               </p>
             ) : null}
@@ -217,7 +264,7 @@ export default function Hero({ onDownloadBrochure }: HeroProps) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="button-primary w-full mt-4 !px-4 animate-[premium-pulse_2s_ease-in-out_3] disabled:cursor-not-allowed disabled:opacity-60"
+              className="button-primary w-full mt-4 !px-4 !rounded-none animate-[premium-pulse_2s_ease-in-out_3] disabled:cursor-not-allowed disabled:opacity-60"
             >
               {isSubmitting ? 'Sending...' : heroContent.form.submitLabel}
               <ArrowRight size={16} />

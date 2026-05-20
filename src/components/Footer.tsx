@@ -68,9 +68,9 @@ export default function Footer({ onBookVisit }: { onBookVisit: () => void }) {
                   <div className="flex items-baseline gap-2 mb-1 flex-wrap">
                     <h4 className="text-white font-sans font-bold text-xl tracking-tight leading-none whitespace-nowrap">{project.name}</h4>
                     <span className="text-brand-cyan font-serif italic text-base font-light opacity-90 whitespace-nowrap">{project.location}</span>
-                    {project.badge ? (
+                    {(project as any).badge ? (
                       <span className="px-2 py-0.5 rounded-full text-[9px] font-bold tracking-widest uppercase border border-brand-cyan/50 text-brand-cyan bg-brand-cyan/10 whitespace-nowrap">
-                        {project.badge}
+                        {(project as any).badge}
                       </span>
                     ) : null}
                   </div>
@@ -86,9 +86,9 @@ export default function Footer({ onBookVisit }: { onBookVisit: () => void }) {
                 <div className="hidden md:flex relative z-10 h-full flex-col justify-end px-5 py-5">
                   <div className="flex items-baseline gap-2 mb-1 flex-wrap">
                     <h4 className="text-white font-sans font-bold text-xl tracking-tight leading-none">{project.name}</h4>
-                    {project.badge ? (
+                    {(project as any).badge ? (
                       <span className="px-2 py-0.5 rounded-full text-[9px] font-bold tracking-widest uppercase border border-brand-cyan/50 text-brand-cyan bg-brand-cyan/10">
-                        {project.badge}
+                        {(project as any).badge}
                       </span>
                     ) : null}
                   </div>

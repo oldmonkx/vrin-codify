@@ -106,10 +106,10 @@ export default function Amenities({ onDownloadBrochure }: AmenitiesProps) {
                   <div className={`absolute bottom-0 left-0 w-full p-6 lg:p-10 transition-all duration-700 delay-150 transform
                     ${isActive ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12 pointer-events-none absolute'}`}>
                      <h3 className="text-2xl lg:text-4xl font-serif italic text-white mb-4 lg:mb-6">{group.fullTitle}</h3>
-                     <ul className="space-y-2 lg:space-y-3">
+                     <ul className="space-y-3 lg:space-y-4 mt-2">
                        {group.items.map((item, i) => (
-                         <li key={i} className="text-white/80 text-xs lg:text-sm font-light tracking-wide flex items-center gap-2">
-                           <span className="w-1 h-1 rounded-full bg-brand-cyan block" />
+                         <li key={i} className="text-white/80 text-xs lg:text-sm font-light tracking-[0.08em] leading-relaxed flex items-center gap-3">
+                           <span className="w-1 h-1 rotate-45 bg-brand-gold-deep block shrink-0" />
                            {item}
                          </li>
                        ))}
