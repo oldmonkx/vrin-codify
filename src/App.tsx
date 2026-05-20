@@ -7,7 +7,8 @@ import ProjectHighlights from './components/ProjectHighlights';
 import Configurations from './components/Configurations';
 import Highlights from './components/Highlights';
 import Amenities from './components/Amenities';
-import FloorPlans from './components/FloorPlans';
+import Gallery from './components/Gallery';
+import ConstructionUpdates from './components/ConstructionUpdates';
 import Location from './components/Location';
 import Specifications from './components/Specifications';
 import Footer from './components/Footer';
@@ -18,15 +19,9 @@ export default function App() {
   const interactionContent = contentDraft.interactions;
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalTitle, setModalTitle] = useState(contentDraft.leadModal.defaultTitle);
-  const [isFloorPlansUnlocked, setIsFloorPlansUnlocked] = useState(false);
-
   const openModal = (title?: string) => {
     if (title) setModalTitle(title);
     setIsModalOpen(true);
-  };
-
-  const handleUnlockFloorPlans = () => {
-    openModal(interactionContent.modalTitles.downloadFloorPlans);
   };
 
   useEffect(() => {
@@ -45,11 +40,9 @@ export default function App() {
         <Configurations onGetPrice={() => openModal(interactionContent.modalTitles.getPriceSheet)} />
         <Amenities onDownloadBrochure={() => openModal(interactionContent.modalTitles.downloadBrochure)} />
         <Highlights />
-        <FloorPlans 
-          isUnlocked={isFloorPlansUnlocked} 
-          onUnlock={handleUnlockFloorPlans} 
-        />
+        <Gallery />
         <Location />
+        <ConstructionUpdates />
         <Specifications onDownload={() => openModal(interactionContent.modalTitles.downloadSpecifications)} />
       </main>
 
@@ -58,12 +51,7 @@ export default function App() {
 
       <LeadModal 
         isOpen={isModalOpen} 
-        onClose={() => {
-          setIsModalOpen(false);
-          if (modalTitle === interactionContent.modalTitles.downloadFloorPlans) {
-            setIsFloorPlansUnlocked(true);
-          }
-        }} 
+        onClose={() => setIsModalOpen(false)} 
         title={modalTitle}
       />
     </div>
