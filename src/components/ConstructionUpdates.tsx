@@ -8,22 +8,31 @@ interface VideoItem {
   month: string;
 }
 
-// Placeholder video IDs — replace with real YouTube IDs when supplied
 const videos: VideoItem[] = [
   {
-    id: 'dQw4w9WgXcQ', // placeholder
-    title: 'Vrindavan Construction Update — May 2025',
-    month: 'May 2025',
+    id: '720zZcC9fWo',
+    title: 'Vrindavan Construction Update — April 2026',
+    month: 'April 2026',
   },
   {
-    id: 'dQw4w9WgXcQ', // placeholder
-    title: 'Vrindavan Construction Update — April 2025',
-    month: 'April 2025',
+    id: 'GyEnY8r-VEs',
+    title: 'Vrindavan Construction Update — March 2026',
+    month: 'March 2026',
   },
   {
-    id: 'dQw4w9WgXcQ', // placeholder
-    title: 'Vrindavan Construction Update — March 2025',
-    month: 'March 2025',
+    id: 'chS7QgeQGj8',
+    title: 'Vrindavan Construction Update — February 2026',
+    month: 'February 2026',
+  },
+  {
+    id: 'ABC6azZAWik',
+    title: 'Vrindavan Construction Update — January 2026',
+    month: 'January 2026',
+  },
+  {
+    id: '60JfcX3b6lo',
+    title: 'Vrindavan — Construction Begins',
+    month: 'Pilot Update',
   },
 ];
 
