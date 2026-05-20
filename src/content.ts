@@ -46,6 +46,36 @@ export const contentDraft = {
     },
   },
 
+  projectHighlights: {
+    title: 'Project Highlights',
+    items: [
+      {
+        value: '8',
+        label: 'Iconic Towers',
+      },
+      {
+        value: '1846',
+        label: 'Premium Residences',
+      },
+      {
+        value: '1475 - 3375',
+        label: 'Sq.ft Unit Sizes',
+      },
+      {
+        value: '1,35,000',
+        label: 'Sft Clubhouse',
+      },
+      {
+        value: '50+',
+        label: 'Lifestyle Amenities',
+      },
+      {
+        value: 'Kondapur',
+        label: 'Prime Address',
+      },
+    ],
+  },
+
   configurations: {
     eyebrow: 'Curated Living',
     headingLine1: 'Find Your',

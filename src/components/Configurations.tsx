@@ -19,9 +19,9 @@ export default function Configurations({ onGetPrice }: { onGetPrice: () => void 
       />
       
       {/* Gradients for readability over the entire section */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#120810]/95 via-[#120810]/50 to-transparent hidden lg:block pointer-events-none" />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#120810] via-[#120810]/70 to-black/30 lg:hidden pointer-events-none" />
-      <div className="absolute inset-0 bg-black/10 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#120810]/78 via-[#120810]/28 to-transparent hidden lg:block pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#120810]/80 via-[#120810]/42 to-black/10 lg:hidden pointer-events-none" />
+      <div className="absolute inset-0 bg-black/4 pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-start">

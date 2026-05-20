@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import ProjectHighlights from './components/ProjectHighlights';
 
 import Configurations from './components/Configurations';
 import Highlights from './components/Highlights';
@@ -38,8 +39,9 @@ export default function App() {
       
       <main>
         <Hero onDownloadBrochure={() => openModal("Download Brochure")} />
-        <Amenities onDownloadBrochure={() => openModal("Download Brochure")} />
+        <ProjectHighlights />
         <Configurations onGetPrice={() => openModal("Get Price Sheet")} />
+        <Amenities onDownloadBrochure={() => openModal("Download Brochure")} />
         <Highlights />
         <FloorPlans 
           isUnlocked={isFloorPlansUnlocked} 

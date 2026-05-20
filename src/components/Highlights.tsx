@@ -22,7 +22,7 @@ const highlights = [
     title: 'Home in the Sky',
     stat: '2, 3 & 4 BHK',
     copy: 'Thoughtfully finished homes with generous views, elegant interiors, and everyday comfort.',
-    image: '/towebp/3646_Vrindavan_Namishree _Kondapur_Bedroom_28.webp',
+    image: '/optimized/highlights-bedroom.webp',
   },
 ];
 
