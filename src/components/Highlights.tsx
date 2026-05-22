@@ -39,50 +39,71 @@ export default function Highlights() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-5 lg:gap-6">
-          {highlights.map((h, i) => (
-            <motion.div
-              key={h.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.18 + i * 0.12, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative flex h-full flex-col overflow-hidden rounded-[1.6rem] border border-brand-gold/10 bg-[linear-gradient(180deg,rgba(34,19,35,0.96)_0%,rgba(21,10,19,0.98)_100%)] shadow-[0_20px_56px_rgba(0,0,0,0.28)]"
-            >
-              <div className="h-[172px] rounded-t-[1.6rem] border-b border-brand-gold/10 bg-[linear-gradient(180deg,rgba(247,241,232,0.08)_0%,rgba(247,241,232,0.03)_100%)] md:h-[190px] lg:h-[208px]">
-                {h.image ? (
-                  <img
-                    src={h.image}
-                    alt={h.title}
-                    loading="lazy"
-                    decoding="async"
-                    className={`h-full w-full transition-transform duration-[1400ms] ease-out ${
-                      'imageFit' in h && h.imageFit === 'contain'
-                        ? 'object-fill group-hover:scale-[1.01]'
-                        : 'object-cover group-hover:scale-[1.03]'
-                    }`}
-                  />
-                ) : (
-                  <div className="flex h-full items-center justify-center">
-                    <div className="h-[72%] w-[78%] rounded-[1.25rem] border border-dashed border-brand-gold/16 bg-[linear-gradient(180deg,rgba(253,251,247,0.03)_0%,rgba(253,251,247,0.01)_100%)]" />
-                  </div>
-                )}
-              </div>
+        <div className="mt-16 flex flex-col gap-24 md:gap-32 lg:gap-40">
+          {highlights.map((h, i) => {
+            const isEven = i % 2 === 0;
+            return (
+              <div key={h.title} className={`flex flex-col md:flex-row items-center gap-8 md:gap-0 ${isEven ? '' : 'md:flex-row-reverse'}`}>
+                {/* Image Section */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, margin: "-10%" }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="w-full md:w-[65%] relative z-10"
+                >
+                   <div className="relative aspect-[4/3] md:aspect-[16/10] overflow-hidden rounded-none border border-brand-gold/20 shadow-2xl group">
+                     {h.image ? (
+                       <img
+                         src={h.image}
+                         alt={h.title}
+                         loading="lazy"
+                         decoding="async"
+                         className="h-full w-full object-cover transition-transform duration-[3000ms] ease-out group-hover:scale-[1.03] will-change-transform"
+                       />
+                     ) : (
+                       <div className="h-full w-full bg-brand-ink/40" />
+                     )}
+                   </div>
+                </motion.div>
 
-              <div className="relative flex flex-1 flex-col p-5 md:p-5 lg:p-6">
-                <h3 className="text-[1.65rem] font-serif font-medium tracking-[0.01em] text-white md:text-[1.85rem] lg:text-[2rem]">
-                  {h.title}
-                </h3>
-                <p className="mt-3 max-w-sm text-xs font-light leading-relaxed text-white/74 md:text-sm">
-                  {h.copy}
-                </p>
-                <div className="mt-auto flex items-center gap-4 pt-5">
-                  <span className="text-sm font-semibold tracking-wide text-white md:text-base">{h.stat}</span>
-                  <span className="h-px flex-1 bg-gradient-to-r from-brand-gold/55 via-brand-gold/20 to-transparent" />
-                </div>
+                {/* Text Box Section (Overlapping) */}
+                <motion.div
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-10%" }}
+                  transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                  className={`w-full md:w-[45%] relative z-20 ${isEven ? 'md:-ml-24' : 'md:-mr-24'} mt-[-3rem] md:mt-16 group/text`}
+                >
+                  <div className={`relative overflow-hidden bg-[linear-gradient(135deg,rgba(25,12,22,0.96)_0%,rgba(15,8,13,0.98)_100%)] p-8 md:p-12 shadow-[0_30px_60px_rgba(0,0,0,0.4)] backdrop-blur-md border-brand-gold/30 ${isEven ? 'border-l' : 'border-r'}`}>
+                    {/* Materiality: Film Grain */}
+                    <div className="absolute inset-0 opacity-15 mix-blend-overlay pointer-events-none bg-[url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E')]" />
+                    {/* Materiality: Ambient Glow */}
+                    <div className={`absolute -inset-24 bg-[radial-gradient(circle_at_${isEven ? 'top_right' : 'top_left'},rgba(201,168,119,0.15),transparent_60%)] pointer-events-none opacity-50 transition-opacity duration-1000 group-hover/text:opacity-100`} />
+                    
+                    <div className="relative z-10">
+                      <span className="text-xs md:text-sm font-semibold tracking-[0.25em] text-brand-gold uppercase">{h.stat}</span>
+                      <h3 className="mt-4 text-[2rem] md:text-[2.5rem] lg:text-[3rem] font-serif font-light leading-tight text-white drop-shadow-md">
+                        {(() => {
+                          const words = h.title.split(' ');
+                          const lastWord = words.pop();
+                          return (
+                            <>
+                              {words.join(' ')}{' '}
+                              <span className="italic font-light text-brand-gold-pale">{lastWord}</span>
+                            </>
+                          );
+                        })()}
+                      </h3>
+                      <p className="mt-6 text-sm md:text-base font-light leading-relaxed text-white/70">
+                        {h.copy}
+                      </p>
+                    </div>
+                  </div>
+                </motion.div>
               </div>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

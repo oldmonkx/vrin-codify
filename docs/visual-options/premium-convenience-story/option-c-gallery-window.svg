@@ -1,0 +1,63 @@
+<svg width="1600" height="980" viewBox="0 0 1600 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="980" fill="#F5F0E8"/>
+  <rect x="84" y="72" width="1432" height="836" rx="46" fill="#F1E9DE"/>
+  <text x="800" y="176" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" letter-spacing="5" fill="#A88654">A DAY DESIGNED TO FLOW</text>
+  <text x="800" y="260" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="84" font-weight="700" fill="#111111">Where convenience feels curated.</text>
+  <text x="800" y="316" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-style="italic" fill="#433A35">A premium story panel with a central illustration and supporting moments below.</text>
+
+  <rect x="278" y="370" width="1044" height="262" rx="34" fill="#FFFDF8"/>
+  <path d="M394 520C484 452 562 428 646 428C732 428 790 480 878 480C954 480 1022 420 1100 420C1166 420 1216 454 1270 516" stroke="#111111" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="462" cy="490" r="34" fill="#DDECC0" stroke="#111111" stroke-width="5"/>
+  <path d="M448 490H476" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+  <path d="M462 476V504" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+
+  <circle cx="676" cy="438" r="34" fill="#EFDAB4" stroke="#111111" stroke-width="5"/>
+  <path d="M658 452H694" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+  <path d="M676 424V452" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+
+  <circle cx="900" cy="478" r="34" fill="#F0D0C2" stroke="#111111" stroke-width="5"/>
+  <path d="M882 492H918" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+  <path d="M882 492C890 470 910 456 918 446" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+
+  <circle cx="1124" cy="432" r="34" fill="#D7E4ED" stroke="#111111" stroke-width="5"/>
+  <path d="M1110 448L1124 420L1138 448" stroke="#111111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1124 420V462" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+
+  <path d="M332 438C342 404 382 390 410 412" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+  <path d="M1250 408C1258 378 1294 370 1316 388C1326 366 1360 364 1378 388C1402 384 1420 404 1412 426C1434 438 1430 468 1396 468H1320C1288 470 1240 454 1250 408Z" fill="#FFFDF8" stroke="#111111" stroke-width="5"/>
+
+  <g transform="translate(238 682)">
+    <rect width="266" height="164" rx="26" fill="#FFFDF8"/>
+    <text x="28" y="56" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#111111">Arrival</text>
+    <text x="28" y="90" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-style="italic" fill="#111111">Concierge calm</text>
+    <text x="28" y="126" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#514C47">A refined welcome with guided</text>
+    <text x="28" y="152" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#514C47">handoffs and guest support.</text>
+  </g>
+
+  <g transform="translate(534 682)">
+    <rect width="266" height="164" rx="26" fill="#FFFDF8"/>
+    <text x="28" y="56" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#111111">Essentials</text>
+    <text x="28" y="90" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-style="italic" fill="#111111">Close at hand</text>
+    <text x="28" y="126" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#514C47">Store, pharmacy, and family</text>
+    <text x="28" y="152" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#514C47">routines resolved nearby.</text>
+  </g>
+
+  <g transform="translate(830 682)">
+    <rect width="266" height="164" rx="26" fill="#FFFDF8"/>
+    <text x="28" y="56" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#111111">Service</text>
+    <text x="28" y="90" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-style="italic" fill="#111111">Quietly handled</text>
+    <text x="28" y="126" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#514C47">Kitchen, parcels, and support</text>
+    <text x="28" y="152" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#514C47">built into everyday life.</text>
+  </g>
+
+  <g transform="translate(1126 682)">
+    <rect width="266" height="164" rx="26" fill="#FFFDF8"/>
+    <text x="28" y="56" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#111111">Mobility</text>
+    <text x="28" y="90" font-family="Georgia, 'Times New Roman', serif" font-size="24" font-style="italic" fill="#111111">Effortless flow</text>
+    <text x="28" y="126" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#514C47">Charging, pick-up, and exits</text>
+    <text x="28" y="152" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#514C47">that keep movement smooth.</text>
+  </g>
+
+  <text x="128" y="876" font-family="Arial, Helvetica, sans-serif" font-size="20" letter-spacing="3" fill="#8E7961">OPTION C  GALLERY WINDOW</text>
+  <text x="128" y="908" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#514C47">Best if you want a more architectural, gallery-like premium section with one hero illustration above four compact cards.</text>
+</svg>
