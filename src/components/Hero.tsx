@@ -249,7 +249,7 @@ export default function Hero({ onDownloadBrochure }: HeroProps) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="button-primary w-full mt-4 !px-4 !rounded-none animate-[premium-pulse_2s_ease-in-out_3] disabled:cursor-not-allowed disabled:opacity-60"
+              className="button-primary w-full mt-4 !px-4 !rounded-none animate-[premium-pulse_2s_ease-in-out_3] disabled:cursor-not-allowed disabled:opacity-60 font-['Josefin_Sans']"
             >
               {isSubmitting ? 'Sending...' : heroContent.form.submitLabel}
               <ArrowRight size={16} />
