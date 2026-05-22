@@ -76,24 +76,13 @@ export default function Highlights() {
                   className={`w-full md:w-[45%] relative z-20 ${isEven ? 'md:-ml-24' : 'md:-mr-24'} mt-[-3rem] md:mt-16 group/text`}
                 >
                   <div className={`relative overflow-hidden bg-[linear-gradient(135deg,rgba(25,12,22,0.96)_0%,rgba(15,8,13,0.98)_100%)] p-8 md:p-12 shadow-[0_30px_60px_rgba(0,0,0,0.4)] backdrop-blur-md border-brand-gold/30 ${isEven ? 'border-l' : 'border-r'}`}>
-                    {/* Materiality: Film Grain */}
-                    <div className="absolute inset-0 opacity-15 mix-blend-overlay pointer-events-none bg-[url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.85%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E')]" />
                     {/* Materiality: Ambient Glow */}
                     <div className={`absolute -inset-24 bg-[radial-gradient(circle_at_${isEven ? 'top_right' : 'top_left'},rgba(201,168,119,0.15),transparent_60%)] pointer-events-none opacity-50 transition-opacity duration-1000 group-hover/text:opacity-100`} />
                     
                     <div className="relative z-10">
                       <span className="text-xs md:text-sm font-semibold tracking-[0.25em] text-brand-gold uppercase">{h.stat}</span>
                       <h3 className="mt-4 text-[2rem] md:text-[2.5rem] lg:text-[3rem] font-serif font-light leading-tight text-white drop-shadow-md">
-                        {(() => {
-                          const words = h.title.split(' ');
-                          const lastWord = words.pop();
-                          return (
-                            <>
-                              {words.join(' ')}{' '}
-                              <span className="italic font-light text-brand-gold-pale">{lastWord}</span>
-                            </>
-                          );
-                        })()}
+                        {h.title}
                       </h3>
                       <p className="mt-6 text-sm md:text-base font-light leading-relaxed text-white/70">
                         {h.copy}

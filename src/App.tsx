@@ -1,16 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { contentDraft } from './content';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import ProjectHighlights from './components/ProjectHighlights';
-
-import Configurations from './components/Configurations';
-import Highlights from './components/Highlights';
-import Amenities from './components/Amenities';
-import Gallery from './components/Gallery';
+const ProjectHighlights = React.lazy(() => import('./components/ProjectHighlights'));
+const Configurations = React.lazy(() => import('./components/Configurations'));
+const Highlights = React.lazy(() => import('./components/Highlights'));
+const Amenities = React.lazy(() => import('./components/Amenities'));
+const Gallery = React.lazy(() => import('./components/Gallery'));
 import ConstructionUpdates from './components/ConstructionUpdates';
-import Location from './components/Location';
-import Specifications from './components/Specifications';
+const Location = React.lazy(() => import('./components/Location'));
+const Specifications = React.lazy(() => import('./components/Specifications'));
 import Footer from './components/Footer';
 import MobileBottomBar from './components/MobileBottomBar';
 import LeadModal from './components/LeadModal';
@@ -36,14 +35,16 @@ export default function App() {
       
       <main>
         <Hero onDownloadBrochure={() => openModal(interactionContent.modalTitles.downloadBrochure)} />
-        <ProjectHighlights />
-        <Configurations onGetPrice={() => openModal(interactionContent.modalTitles.getPriceSheet)} />
-        <Amenities onDownloadBrochure={() => openModal(interactionContent.modalTitles.downloadBrochure)} />
-        <Highlights />
-        <Gallery />
-        <Location />
-        <ConstructionUpdates />
-        <Specifications onDownload={() => openModal(interactionContent.modalTitles.downloadSpecifications)} />
+        <Suspense fallback={null}>
+          <ProjectHighlights />
+          <Configurations onGetPrice={() => openModal(interactionContent.modalTitles.getPriceSheet)} />
+          <Amenities onDownloadBrochure={() => openModal(interactionContent.modalTitles.downloadBrochure)} />
+          <Highlights />
+          <Gallery />
+          <Location />
+          <ConstructionUpdates />
+          <Specifications onDownload={() => openModal(interactionContent.modalTitles.downloadSpecifications)} />
+        </Suspense>
       </main>
 
       <Footer onBookVisit={() => openModal(interactionContent.modalTitles.bookSiteVisit)} />
