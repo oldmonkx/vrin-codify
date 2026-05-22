@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const slides = [
@@ -40,16 +40,18 @@ const AUTOPLAY_MS = 4500;
 export default function Gallery() {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const isInView = useInView(sectionRef, { amount: 0.3 });
 
   const prev = useCallback(() => setCurrent((c) => (c - 1 + slides.length) % slides.length), []);
   const next = useCallback(() => setCurrent((c) => (c + 1) % slides.length), []);
 
   // Autoplay
   useEffect(() => {
-    if (paused) return;
+    if (paused || !isInView) return;
     const t = setTimeout(next, AUTOPLAY_MS);
     return () => clearTimeout(t);
-  }, [current, paused, next]);
+  }, [current, paused, next, isInView]);
 
   // Keyboard
   useEffect(() => {
@@ -62,7 +64,7 @@ export default function Gallery() {
   }, [prev, next]);
 
   return (
-    <section id="gallery" className="py-16 md:py-24 bg-brand-surface relative overflow-hidden">
+    <section id="gallery" ref={sectionRef} className="py-16 md:py-24 bg-brand-surface relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(201,168,119,0.04)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
