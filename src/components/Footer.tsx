@@ -38,14 +38,14 @@ export default function Footer({ onBookVisit }: { onBookVisit: () => void }) {
           </div>
         </div>
 
-        <div className="mb-14">
+        <div className="mb-36 md:mb-14">
           <div className="flex items-center gap-4 mb-8">
             <span className="h-px flex-1 bg-brand-gold/14" />
             <span className="text-brand-paper/32 text-[10px] font-bold tracking-[0.3em] uppercase whitespace-nowrap">{footerContent.otherProjectsLabel}</span>
             <span className="h-px flex-1 bg-brand-gold/14" />
           </div>
 
-          <div className="flex flex-col gap-3 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-4">
+          <div className="flex flex-col gap-6 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-5">
             {otherProjects.map((project, i) => (
               <motion.div
                 key={i}
@@ -53,51 +53,48 @@ export default function Footer({ onBookVisit }: { onBookVisit: () => void }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.6 }}
-                className="relative overflow-hidden rounded-xl group cursor-pointer h-[140px] md:h-[280px] lg:h-[320px]"
+                className="group relative flex flex-row-reverse overflow-hidden rounded-[1.35rem] bg-[linear-gradient(180deg,rgba(31,18,28,0.98)_0%,rgba(18,10,16,0.98)_100%)] shadow-[0_18px_42px_rgba(25,14,22,0.18)] md:min-h-0 md:flex-col md:rounded-2xl md:border md:border-brand-gold/14 md:shadow-[0_18px_45px_rgba(31,18,28,0.16)]"
               >
-                <img
-                  src={project.image}
-                  alt={project.name}
-                  loading="lazy"
-                  decoding="async"
-                  className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[2s] ease-out group-hover:scale-105"
-                />
+                <picture className="contents">
+                  {'imageMobile' in project && project.imageMobile ? (
+                    <source media="(max-width: 767px)" srcSet={project.imageMobile} />
+                  ) : null}
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full min-h-[230px] w-[40%] object-cover object-right transition-transform duration-[2s] ease-out group-hover:scale-105 md:aspect-[4/5] md:h-auto md:min-h-0 md:w-full md:object-cover md:object-center"
+                  />
+                </picture>
 
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-paper/88 via-brand-paper/52 to-transparent md:hidden" />
-                <div className="absolute inset-0 hidden md:block bg-gradient-to-t from-brand-paper/92 via-brand-paper/28 to-transparent" />
-
-                <div className="md:hidden relative z-10 h-full flex flex-col justify-center px-5 py-4 max-w-[70%]">
-                  <div className="flex items-baseline gap-2 mb-1 flex-wrap">
-                    <h4 className="text-white font-sans font-bold text-xl tracking-tight leading-none whitespace-nowrap">{project.name}</h4>
-                    <span className="text-brand-gold-pale font-serif italic text-base font-light opacity-95 whitespace-nowrap">{project.location}</span>
-                    {(project as any).badge ? (
-                      <span className="px-2 py-0.5 rounded-full text-[9px] font-bold tracking-widest uppercase border border-brand-gold/45 text-brand-gold-deep bg-brand-gold-pale/18 whitespace-nowrap">
-                        {(project as any).badge}
-                      </span>
-                    ) : null}
+                <div className="flex min-h-[230px] flex-1 flex-col border-r border-brand-gold/14 bg-[linear-gradient(180deg,rgba(30,17,27,0.98)_0%,rgba(18,10,16,1)_100%)] px-5 py-6 md:min-h-[154px] md:border-r-0 md:border-t md:border-brand-gold/16 md:px-6 md:py-5">
+                  <div className="mb-2 flex flex-col gap-1">
+                    <div className="flex flex-wrap items-start gap-2 md:block">
+                      <h4 className="font-sans text-2xl font-bold leading-none tracking-tight text-white md:text-xl">{project.name}</h4>
+                      {(project as any).badge ? (
+                        <span className="max-w-full rounded-full border border-brand-gold/70 bg-brand-gold-deep/90 px-2.5 py-1 text-center text-[8px] font-bold uppercase leading-tight tracking-[0.16em] text-brand-cream shadow-[0_8px_18px_rgba(0,0,0,0.22)] md:hidden">
+                          {(project as any).badge}
+                        </span>
+                      ) : null}
+                    </div>
+                    <span className="block font-serif text-lg font-light italic leading-tight text-brand-gold-pale/95 md:text-[15px]">{project.location}</span>
                   </div>
-                  <p className="text-white/80 text-sm font-medium tracking-wide mb-1">{project.type} · {project.size}</p>
-                  <div className="flex flex-wrap gap-x-3 gap-y-0.5">
-                    {project.details.map((detail, detailIndex) => (
-                      <p key={detailIndex} className="text-white/45 text-[11px] font-light">{detail}</p>
+                  <p className="mb-3 text-[15px] font-semibold leading-snug tracking-wide text-white/90 md:mb-2 md:text-[13px] md:text-white/84">{project.type} · {project.size}</p>
+                  <div className="space-y-1 md:hidden">
+                    {project.details.slice(0, 2).map((detail, detailIndex) => (
+                      <p key={detailIndex} className="text-[12px] font-light leading-relaxed text-white/70">{detail}</p>
                     ))}
                   </div>
-                  <p className="text-white/25 text-[9px] tracking-widest font-mono mt-1.5">{project.rera}</p>
-                </div>
-
-                <div className="hidden md:flex relative z-10 h-full flex-col justify-end px-5 py-5">
-                  <div className="flex items-baseline gap-2 mb-1 flex-wrap">
-                    <h4 className="text-white font-sans font-bold text-xl tracking-tight leading-none">{project.name}</h4>
+                  <p className="hidden text-[10px] font-light leading-relaxed text-white/66 md:block">{project.details[0]}</p>
+                  <div className="mt-auto flex flex-wrap items-end justify-between gap-2 pt-4">
+                    <p className="text-[9px] leading-none tracking-widest text-white/42 md:text-white/48">{project.rera}</p>
                     {(project as any).badge ? (
-                      <span className="px-2 py-0.5 rounded-full text-[9px] font-bold tracking-widest uppercase border border-brand-gold/45 text-brand-gold-deep bg-brand-gold-pale/18">
+                      <span className="hidden rounded-full border border-brand-gold/70 bg-brand-gold-deep/90 px-2.5 py-1 text-center text-[7px] font-bold uppercase leading-tight tracking-[0.16em] text-brand-cream shadow-[0_8px_18px_rgba(0,0,0,0.22)] md:inline-flex">
                         {(project as any).badge}
                       </span>
                     ) : null}
                   </div>
-                  <span className="text-brand-gold-pale font-serif italic text-sm font-light opacity-95 mb-2">{project.location}</span>
-                  <p className="text-white/70 text-xs font-medium tracking-wide mb-2">{project.type} · {project.size}</p>
-                  <p className="text-white/30 text-[10px] font-light">{project.details[0]}</p>
-                  <p className="text-white/20 text-[9px] tracking-widest font-mono mt-2">{project.rera}</p>
                 </div>
               </motion.div>
             ))}
