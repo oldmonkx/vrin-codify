@@ -167,7 +167,7 @@ export const contentDraft = {
         title: 'Double Height Lobbies',
         stat: 'Grand Arrival',
         copy: 'Grand entrance lobbies designed with soaring volumes, elegant finishes, and a refined sense of arrival that welcomes you home in style.',
-        image: '/optimized/clubhouse-new.webp',
+        image: '/optimized/clubhouse-hero.png',
       },
       {
         title: 'Green Quiet',

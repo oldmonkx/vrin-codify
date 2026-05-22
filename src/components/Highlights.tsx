@@ -56,7 +56,11 @@ export default function Highlights() {
                     alt={h.title}
                     loading="lazy"
                     decoding="async"
-                    className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.03]"
+                    className={`h-full w-full transition-transform duration-[1400ms] ease-out ${
+                      'imageFit' in h && h.imageFit === 'contain'
+                        ? 'object-fill group-hover:scale-[1.01]'
+                        : 'object-cover group-hover:scale-[1.03]'
+                    }`}
                   />
                 ) : (
                   <div className="flex h-full items-center justify-center">
