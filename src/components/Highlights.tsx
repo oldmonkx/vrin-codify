@@ -9,6 +9,17 @@ export default function Highlights() {
     <section id="highlights" className="relative overflow-hidden bg-brand-surface py-16 md:py-20 lg:py-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(232,213,170,0.06)_0%,transparent_34%),radial-gradient(circle_at_85%_22%,rgba(201,168,119,0.08)_0%,transparent_30%)] pointer-events-none" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(18,8,16,0.24)_0%,rgba(18,8,16,0.1)_26%,rgba(18,8,16,0.16)_100%)] pointer-events-none" />
+      
+      {/* Ribbed Luxury Pinstripe Texture */}
+      <div 
+        className="absolute inset-0 pointer-events-none opacity-40 mix-blend-screen" 
+        style={{ 
+          backgroundImage: "repeating-linear-gradient(-45deg, rgba(201,168,119,0.07) 0, rgba(201,168,119,0.07) 1px, transparent 1px, transparent 32px)",
+          maskImage: "linear-gradient(to bottom, black 10%, transparent 90%)",
+          WebkitMaskImage: "linear-gradient(to bottom, black 10%, transparent 90%)"
+        }} 
+      />
+
       <div className="absolute -left-24 top-10 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(201,168,119,0.08)_0%,transparent_68%)] pointer-events-none transform-gpu" />
       <div className="absolute left-1/2 top-1/3 h-[620px] w-[620px] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(102,68,107,0.1)_0%,transparent_70%)] pointer-events-none transform-gpu" />
       <div className="absolute bottom-0 right-0 h-[520px] w-[520px] bg-[radial-gradient(circle,rgba(108,183,192,0.06)_0%,transparent_70%)] pointer-events-none transform-gpu" />
