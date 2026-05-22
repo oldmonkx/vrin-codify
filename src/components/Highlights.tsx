@@ -12,7 +12,7 @@ export default function Highlights() {
       
       {/* Ribbed Luxury Pinstripe Texture */}
       <div 
-        className="absolute inset-0 pointer-events-none opacity-40 mix-blend-screen" 
+        className="absolute inset-0 pointer-events-none opacity-[0.45]" 
         style={{ 
           backgroundImage: "repeating-linear-gradient(-45deg, rgba(201,168,119,0.07) 0, rgba(201,168,119,0.07) 1px, transparent 1px, transparent 32px)",
           maskImage: "linear-gradient(to bottom, black 10%, transparent 90%)",
@@ -86,7 +86,7 @@ export default function Highlights() {
                   transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                   className={`w-full md:w-[45%] relative z-20 ${isEven ? 'md:-ml-24' : 'md:-mr-24'} mt-[-3rem] md:mt-16 group/text`}
                 >
-                  <div className={`relative overflow-hidden bg-[linear-gradient(135deg,rgba(25,12,22,0.96)_0%,rgba(15,8,13,0.98)_100%)] p-8 md:p-12 shadow-[0_30px_60px_rgba(0,0,0,0.4)] backdrop-blur-md border-brand-gold/30 ${isEven ? 'border-l' : 'border-r'}`}>
+                  <div className={`relative overflow-hidden bg-[linear-gradient(135deg,rgba(25,12,22,0.96)_0%,rgba(15,8,13,0.98)_100%)] p-8 md:p-12 shadow-[0_30px_60px_rgba(0,0,0,0.4)] border-brand-gold/30 ${isEven ? 'border-l' : 'border-r'}`}>
                     {/* Materiality: Ambient Glow */}
                     <div className={`absolute -inset-24 bg-[radial-gradient(circle_at_${isEven ? 'top_right' : 'top_left'},rgba(201,168,119,0.15),transparent_60%)] pointer-events-none opacity-50 transition-opacity duration-1000 group-hover/text:opacity-100`} />
                     

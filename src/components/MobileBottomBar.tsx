@@ -26,8 +26,7 @@ export default function MobileBottomBar({ onBrochure }: { onBrochure: () => void
         className="relative overflow-hidden w-1/2 flex items-center justify-center gap-2 bg-gradient-to-r from-brand-gold to-brand-gold-deep text-brand-paper active:opacity-90 transition-opacity font-bold tracking-[0.15em] uppercase h-[72px] pb-safe"
       >
         <span 
-          className="absolute inset-0 -ml-[50%] w-[50%] h-full bg-gradient-to-r from-transparent via-white/50 to-transparent animate-[shine_4s_infinite_ease-in-out]" 
-          style={{ willChange: 'transform' }} 
+          className="absolute inset-0 -ml-[50%] w-[50%] h-full bg-gradient-to-r from-transparent via-white/50 to-transparent animate-[shine_4s_ease-in-out_3]" 
         />
         <span className="relative z-10 text-[10px]">{mobileBarContent.brochureLabel}</span>
         <Download size={16} strokeWidth={2} className="relative z-10" />

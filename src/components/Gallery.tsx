@@ -55,13 +55,14 @@ export default function Gallery() {
 
   // Keyboard
   useEffect(() => {
+    if (!isInView) return;
     const fn = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') prev();
       if (e.key === 'ArrowRight') next();
     };
     window.addEventListener('keydown', fn);
     return () => window.removeEventListener('keydown', fn);
-  }, [prev, next]);
+  }, [prev, next, isInView]);
 
   return (
     <section id="gallery" ref={sectionRef} className="py-16 md:py-24 bg-brand-surface relative overflow-hidden">
