@@ -129,7 +129,7 @@ export const contentDraft = {
     headingLine1: 'Find Your',
     headingLine2: 'Perfect Home',
     body:
-      'Thoughtfully designed residences with panoramic views and premium finishes across 8 iconic towers.',
+      'Thoughtfully crafted 2, 3 & 4 BHK residences in Kondapur, surrounded by sky-high views, lush open spaces, and a 1.35 lakh sq.ft clubhouse lifestyle.',
     featureImage: '/optimized/configurations-tower.webp',
     panelTitle: 'Project Configurations',
     cards: [
@@ -161,24 +161,24 @@ export const contentDraft = {
     headingLine1: 'Where every detail',
     headingLine2: 'is a luxury.',
     body:
-      'A composed lifestyle shaped around wellness, greenery, and residences that feel quietly elevated from the moment you arrive.',
+      'Every corner is designed with intention — from double-height lobbies and open courtyards to homes that rise above the everyday.',
     cards: [
       {
-        title: 'Clubhouse Life',
-        stat: '1,35,000 Sq.Ft',
-        copy: 'Wellness, leisure, co-working, and celebration spaces designed for everyday indulgence.',
+        title: 'Double Height Lobbies',
+        stat: 'Grand Arrival',
+        copy: 'Grand entrance lobbies designed with soaring volumes, elegant finishes, and a refined sense of arrival that welcomes you home in style.',
         image: '/optimized/clubhouse-new.webp',
       },
       {
         title: 'Green Quiet',
         stat: '9.5 Acres',
-        copy: 'Private courtyards, water features, shaded walks, and calm pockets of green.',
+        copy: 'Landscaped courtyards, shaded walkways, water features, and calm green pockets create a peaceful retreat within the community, giving every day a quieter, more refreshing rhythm.',
         image: '/optimized/green-quiet.webp',
       },
       {
         title: 'Home in the Sky',
         stat: '2, 3 & 4 BHK',
-        copy: 'Thoughtfully finished homes with generous views, elegant interiors, and everyday comfort.',
+        copy: 'Thoughtfully planned 2, 3 & 4 BHK homes with expansive views, elegant finishes, and generous spaces that bring comfort, privacy, and a sense of elevation to everyday living.',
         image: '/optimized/home-sky.webp',
       },
     ],
@@ -188,7 +188,8 @@ export const contentDraft = {
     headingLine1: 'Carefully curated',
     headingLine2: 'lifestyle',
     headingLine3: 'for your loved ones',
-    description: "A private sanctuary of experiences designed to nurture, celebrate, and elevate every moment. Experience a community where world-class amenities harmonize with sprawling green spaces to create a safe, vibrant, and luxurious haven for your family.",
+    description:
+      'A beautifully planned lifestyle environment where nature, leisure, and community come together. With open greens, curated outdoor spaces, and family-friendly amenities, every moment is designed to feel more peaceful, meaningful, and complete.',
     cta: 'Download Brochure',
     groups: [
       {

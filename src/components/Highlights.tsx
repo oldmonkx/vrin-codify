@@ -47,7 +47,7 @@ export default function Highlights() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.18 + i * 0.12, duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
-              className="group relative overflow-hidden rounded-[1.6rem] border border-brand-gold/10 bg-[linear-gradient(180deg,rgba(34,19,35,0.96)_0%,rgba(21,10,19,0.98)_100%)] shadow-[0_20px_56px_rgba(0,0,0,0.28)]"
+              className="group relative flex h-full flex-col overflow-hidden rounded-[1.6rem] border border-brand-gold/10 bg-[linear-gradient(180deg,rgba(34,19,35,0.96)_0%,rgba(21,10,19,0.98)_100%)] shadow-[0_20px_56px_rgba(0,0,0,0.28)]"
             >
               <div className="h-[172px] rounded-t-[1.6rem] border-b border-brand-gold/10 bg-[linear-gradient(180deg,rgba(247,241,232,0.08)_0%,rgba(247,241,232,0.03)_100%)] md:h-[190px] lg:h-[208px]">
                 {h.image ? (
@@ -65,14 +65,14 @@ export default function Highlights() {
                 )}
               </div>
 
-              <div className="relative p-5 md:p-5 lg:p-6">
+              <div className="relative flex flex-1 flex-col p-5 md:p-5 lg:p-6">
                 <h3 className="text-[1.65rem] font-serif font-medium tracking-[0.01em] text-white md:text-[1.85rem] lg:text-[2rem]">
                   {h.title}
                 </h3>
                 <p className="mt-3 max-w-sm text-xs font-light leading-relaxed text-white/74 md:text-sm">
                   {h.copy}
                 </p>
-                <div className="mt-5 flex items-center gap-4">
+                <div className="mt-auto flex items-center gap-4 pt-5">
                   <span className="text-sm font-semibold tracking-wide text-white md:text-base">{h.stat}</span>
                   <span className="h-px flex-1 bg-gradient-to-r from-brand-gold/55 via-brand-gold/20 to-transparent" />
                 </div>
