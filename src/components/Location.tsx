@@ -10,7 +10,7 @@ export default function Location() {
     <section id="location" className="py-16 md:py-32 bg-brand-cream relative border-t border-brand-gold/15">
       <div className="absolute inset-0 bg-pattern-starry opacity-60 pointer-events-none" />
       <div className="container mx-auto px-6 relative z-10">
-        <div className="mb-20">
+        <div className="mb-12 max-w-3xl lg:mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -18,6 +18,15 @@ export default function Location() {
           >
             {locationContent.headingLine1} <span className="font-serif italic bg-clip-text text-transparent bg-gradient-to-r from-brand-gold-deep to-brand-gold font-light">{locationContent.headingLine2}</span>
           </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.08, duration: 0.65 }}
+            className="max-w-2xl text-sm font-light leading-relaxed text-brand-paper/80 md:text-base"
+          >
+            {locationContent.body}
+          </motion.p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8 items-stretch">
@@ -57,9 +66,6 @@ export default function Location() {
             
             <div className="relative z-10 mb-8">
               <p className="text-[10px] md:text-xs font-bold tracking-[0.25em] uppercase text-brand-gold-deep">{locationContent.nearbyLabel}</p>
-              <p className="mt-3 text-sm md:text-base font-light leading-relaxed text-brand-paper/80">
-                {locationContent.body}
-              </p>
             </div>
             
             <div className="relative z-10 grid gap-x-8 md:grid-cols-2">

@@ -267,7 +267,7 @@ export const contentDraft = {
     headingLine2: 'Highlights',
     nearbyLabel: 'Nearby in Minutes',
     body:
-      'Strategic proximity connecting you to major IT hubs, top educational institutions, and world-class healthcare facilities instantly.',
+      'Designed around convenience and connectivity, this address brings the city closer without compromising on calm. Whether it’s work, school, healthcare, shopping, or leisure, every essential part of daily life feels easier to reach.',
     proximities: [
       { label: 'HITECH City', time: '3 min' },
       { label: 'Financial District', time: '8 min' },
@@ -282,9 +282,9 @@ export const contentDraft = {
 
   specifications: {
     mobileHeadingLine1: 'Project',
-    mobileHeadingLine2: 'Specification',
+    mobileHeadingLine2: 'Specifications',
     desktopHeadingLine1: 'Project',
-    desktopHeadingLine2: 'Specification',
+    desktopHeadingLine2: 'Specifications',
     body:
       'Built with advanced structural engineering, premium finishes, branded fittings, and refined specifications that ensure strength, comfort, and long-lasting luxury.',
     downloadLabel: 'Download Full Specs',
