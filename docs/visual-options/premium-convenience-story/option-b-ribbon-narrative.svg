@@ -1,0 +1,75 @@
+<svg width="1600" height="980" viewBox="0 0 1600 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="980" fill="#F7F2EA"/>
+  <rect x="76" y="78" width="1448" height="824" rx="52" fill="#F0E8DC"/>
+  <rect x="152" y="158" width="1296" height="244" rx="34" fill="#F8F5F0"/>
+  <path d="M198 294C322 190 452 178 562 224C706 284 782 270 904 208C1030 144 1178 156 1396 282" stroke="#111111" stroke-width="7" stroke-linecap="round"/>
+  <path d="M246 322C280 286 308 254 330 226" stroke="#111111" stroke-width="7" stroke-linecap="round"/>
+  <path d="M1310 198C1320 172 1354 160 1376 180C1388 154 1428 152 1446 180C1476 174 1496 204 1482 226C1510 238 1504 274 1460 274H1378C1342 278 1298 252 1310 198Z" fill="#F8F5F0" stroke="#111111" stroke-width="5"/>
+
+  <circle cx="340" cy="236" r="36" fill="#D9ECAF" stroke="#111111" stroke-width="5"/>
+  <path d="M320 236H360" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+  <path d="M340 216V256" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+
+  <circle cx="612" cy="252" r="36" fill="#EFDAB4" stroke="#111111" stroke-width="5"/>
+  <path d="M588 258H636" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+  <path d="M612 228V252" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+
+  <circle cx="924" cy="228" r="36" fill="#F0D0C2" stroke="#111111" stroke-width="5"/>
+  <path d="M904 244C920 218 932 210 948 244" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+  <path d="M900 252H948" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+
+  <circle cx="1210" cy="238" r="36" fill="#D7E4ED" stroke="#111111" stroke-width="5"/>
+  <path d="M1196 254L1212 222L1228 254" stroke="#111111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M1212 222V266" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+
+  <text x="800" y="520" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="76" font-weight="700" fill="#111111">Convenience with character.</text>
+  <text x="800" y="582" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-style="italic" fill="#2A2421">A premium ribbon story that turns services into memorable moments.</text>
+
+  <g transform="translate(186 640)">
+    <rect x="0" y="24" width="290" height="186" rx="28" fill="#FFFDF9"/>
+    <rect x="18" y="0" width="120" height="42" rx="21" fill="#111111"/>
+    <text x="60" y="28" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#F7F2EA">ARRIVAL</text>
+    <text x="34" y="92" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#111111">Concierge</text>
+    <text x="34" y="132" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#514C47">Lobby assistance, guest</text>
+    <text x="34" y="162" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#514C47">guidance, calm handovers.</text>
+    <path d="M210 80H254V168H210" stroke="#111111" stroke-width="5"/>
+    <path d="M180 168V104C180 90 192 78 206 78H232" stroke="#111111" stroke-width="5"/>
+  </g>
+
+  <g transform="translate(492 610)">
+    <rect x="0" y="54" width="290" height="216" rx="28" fill="#FFFDF9"/>
+    <rect x="18" y="0" width="148" height="42" rx="21" fill="#BBA06F"/>
+    <text x="92" y="28" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#111111">ESSENTIALS</text>
+    <text x="34" y="122" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#111111">Daily ease</text>
+    <text x="34" y="162" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#514C47">Store, pharmacy, and</text>
+    <text x="34" y="192" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#514C47">family routines in reach.</text>
+    <rect x="198" y="120" width="60" height="82" rx="14" fill="#DCE8C1" stroke="#111111" stroke-width="5"/>
+    <path d="M212 120V98H244V120" stroke="#111111" stroke-width="5"/>
+  </g>
+
+  <g transform="translate(798 640)">
+    <rect x="0" y="24" width="290" height="186" rx="28" fill="#FFFDF9"/>
+    <rect x="18" y="0" width="128" height="42" rx="21" fill="#111111"/>
+    <text x="82" y="28" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#F7F2EA">SERVICE</text>
+    <text x="34" y="92" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#111111">On call</text>
+    <text x="34" y="132" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#514C47">Kitchen support, parcels,</text>
+    <text x="34" y="162" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#514C47">and hosted convenience.</text>
+    <path d="M208 150C208 108 238 80 256 72C272 82 298 110 298 150" stroke="#111111" stroke-width="5"/>
+    <path d="M220 150H286" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(1104 610)">
+    <rect x="0" y="54" width="290" height="216" rx="28" fill="#FFFDF9"/>
+    <rect x="18" y="0" width="138" height="42" rx="21" fill="#BBA06F"/>
+    <text x="88" y="28" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" fill="#111111">MOBILITY</text>
+    <text x="34" y="122" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" fill="#111111">Smooth exits</text>
+    <text x="34" y="162" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#514C47">EV bays and planned</text>
+    <text x="34" y="192" font-family="Arial, Helvetica, sans-serif" font-size="22" fill="#514C47">movement without friction.</text>
+    <path d="M192 196H268" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+    <path d="M206 196V134C206 120 218 108 232 108H258V196" stroke="#111111" stroke-width="5"/>
+    <path d="M238 126L226 148H244L232 170" stroke="#111111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <text x="156" y="866" font-family="Arial, Helvetica, sans-serif" font-size="20" letter-spacing="3" fill="#8E7961">OPTION B  RIBBON NARRATIVE</text>
+  <text x="156" y="898" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#514C47">Best if you want stronger storytelling and a more fashion-editorial rhythm with staggered cards.</text>
+</svg>

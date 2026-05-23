@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
+import { motion, AnimatePresence, useInView } from 'motion/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const slides = [
@@ -40,29 +40,32 @@ const AUTOPLAY_MS = 4500;
 export default function Gallery() {
   const [current, setCurrent] = useState(0);
   const [paused, setPaused] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const isInView = useInView(sectionRef, { amount: 0.3 });
 
   const prev = useCallback(() => setCurrent((c) => (c - 1 + slides.length) % slides.length), []);
   const next = useCallback(() => setCurrent((c) => (c + 1) % slides.length), []);
 
   // Autoplay
   useEffect(() => {
-    if (paused) return;
+    if (paused || !isInView) return;
     const t = setTimeout(next, AUTOPLAY_MS);
     return () => clearTimeout(t);
-  }, [current, paused, next]);
+  }, [current, paused, next, isInView]);
 
   // Keyboard
   useEffect(() => {
+    if (!isInView) return;
     const fn = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') prev();
       if (e.key === 'ArrowRight') next();
     };
     window.addEventListener('keydown', fn);
     return () => window.removeEventListener('keydown', fn);
-  }, [prev, next]);
+  }, [prev, next, isInView]);
 
   return (
-    <section id="gallery" className="py-16 md:py-24 bg-brand-paper relative overflow-hidden">
+    <section id="gallery" ref={sectionRef} className="py-16 md:py-24 bg-brand-surface relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle,rgba(201,168,119,0.04)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -73,13 +76,16 @@ export default function Gallery() {
           viewport={{ once: true }}
           className="mb-8 md:mb-12"
         >
-          <p className="text-[10px] tracking-[0.25em] uppercase text-brand-gold mb-3 font-sans">
-            Life at Vrindavan
-          </p>
+          <div className="flex items-center gap-4 mb-4">
+            <div className="h-px w-8 bg-brand-gold/40" />
+            <p className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-brand-gold font-['Josefin_Sans'] font-medium">
+              Life at Vrindavan
+            </p>
+          </div>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-sans tracking-tight font-light leading-[1.05] text-white">
+            <h2 className="text-4xl md:text-5xl lg:text-[4rem] font-['Josefin_Sans'] tracking-tight font-light leading-[1.05] text-white">
               A World Within{' '}
-              <span className="font-serif italic font-light text-gradient">9.5 Acres</span>
+              <span className="font-['Cinzel'] italic font-light text-gradient">9.5 Acres</span>
             </h2>
             {/* Desktop nav arrows */}
             <div className="hidden md:flex items-center gap-3 pb-1">
@@ -119,7 +125,7 @@ export default function Gallery() {
           onMouseLeave={() => setPaused(false)}
         >
           {/* Main slide */}
-          <div className="relative w-full aspect-[16/9] md:aspect-[21/9] lg:aspect-[21/8] overflow-hidden bg-brand-surface">
+          <div className="relative w-full aspect-[16/9.9] md:aspect-[21/9.9] lg:aspect-[21/8.8] overflow-hidden bg-brand-surface">
             <AnimatePresence mode="wait">
               <motion.img
                 key={slides[current].src}

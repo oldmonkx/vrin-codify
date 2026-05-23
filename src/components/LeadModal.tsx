@@ -156,7 +156,7 @@ export default function LeadModal({ isOpen, onClose, title = "Get Exclusive Acce
                 <button
                   disabled={isLoading}
                   type="submit"
-                  className="button-primary w-full mt-6 !rounded-none animate-[premium-pulse_2s_ease-in-out_3] disabled:opacity-50 transition-all duration-300"
+                  className="button-primary w-full mt-6 !rounded-none animate-[premium-pulse_2s_ease-in-out_3] disabled:opacity-50 transition-all duration-300 font-['Josefin_Sans']"
                 >
                   {isLoading ? modalContent.submittingLabel : modalContent.submitLabel}
                 </button>

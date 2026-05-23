@@ -1,0 +1,91 @@
+<svg width="1600" height="980" viewBox="0 0 1600 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="980" fill="#F6F1EA"/>
+  <rect x="68" y="66" width="1464" height="848" rx="44" fill="#F2ECE3"/>
+  <circle cx="230" cy="196" r="124" fill="#EFE6DA"/>
+  <circle cx="1388" cy="212" r="110" fill="#EFE6DA"/>
+  <path d="M92 318C188 370 274 352 372 250C486 132 646 128 814 224C954 304 1092 308 1222 236C1288 199 1358 192 1450 220" stroke="#111111" stroke-width="6" stroke-linecap="round"/>
+  <path d="M314 232L392 198L350 274L314 232Z" fill="#C7E887" stroke="#111111" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M315 232L392 198L342 223L315 232Z" fill="#8FD16D" stroke="#111111" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M1274 205C1284 168 1331 154 1363 181C1372 145 1426 134 1456 166C1496 157 1526 194 1503 226C1536 243 1527 289 1470 284L1360 270C1310 277 1260 255 1274 205Z" fill="#F8F4EE" stroke="#111111" stroke-width="5" stroke-linejoin="round"/>
+  <text x="800" y="248" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-style="italic" fill="#131010">Where every detail</text>
+  <text x="800" y="322" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700" fill="#131010">is a luxury.</text>
+  <text x="800" y="382" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#4D4944">A convenience-led story told through four moments: arrival, essentials, service, and seamless mobility.</text>
+  <path d="M440 434C524 394 612 394 694 434C778 474 862 474 946 434C1028 394 1118 394 1200 434" stroke="#B79A72" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 12"/>
+  <circle cx="500" cy="434" r="11" fill="#C9A877"/>
+  <circle cx="700" cy="434" r="11" fill="#C9A877"/>
+  <circle cx="900" cy="434" r="11" fill="#C9A877"/>
+  <circle cx="1100" cy="434" r="11" fill="#C9A877"/>
+
+  <g>
+    <rect x="274" y="478" width="244" height="308" rx="26" fill="#FFFDFC"/>
+    <text x="306" y="528" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3" fill="#A88654">01</text>
+    <text x="306" y="570" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#111111">Arrive</text>
+    <text x="306" y="614" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-style="italic" fill="#111111">with ease</text>
+    <text x="306" y="660" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#514C47">A concierge-led welcome,</text>
+    <text x="306" y="692" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#514C47">guest coordination, and</text>
+    <text x="306" y="724" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#514C47">a calmer first impression.</text>
+    <rect x="328" y="746" width="136" height="24" rx="12" fill="#F2ECE3"/>
+    <g transform="translate(333 728)">
+      <rect x="34" y="18" width="98" height="64" rx="18" fill="#DCC6A1"/>
+      <path d="M24 82V38C24 26 34 16 46 16H72C84 16 94 26 94 38V82" stroke="#111111" stroke-width="5"/>
+      <path d="M48 46H70" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="59" cy="58" r="6" fill="#111111"/>
+    </g>
+  </g>
+
+  <g>
+    <rect x="536" y="478" width="244" height="308" rx="26" fill="#FFFDFC"/>
+    <text x="568" y="528" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3" fill="#A88654">02</text>
+    <text x="568" y="570" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#111111">Daily</text>
+    <text x="568" y="614" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-style="italic" fill="#111111">essentials</text>
+    <text x="568" y="660" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#514C47">Pharmacy, store, and</text>
+    <text x="568" y="692" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#514C47">school-bus routines placed</text>
+    <text x="568" y="724" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#514C47">closer to every day.</text>
+    <rect x="590" y="746" width="136" height="24" rx="12" fill="#F2ECE3"/>
+    <g transform="translate(590 724)">
+      <rect x="18" y="26" width="116" height="68" rx="16" fill="#CFE3B5"/>
+      <path d="M30 80V44C30 33 39 24 50 24H103C113 24 122 33 122 44V80" stroke="#111111" stroke-width="5"/>
+      <path d="M74 24V8" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+      <path d="M58 16H90" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="108" cy="80" r="8" fill="#111111"/>
+      <circle cx="48" cy="80" r="8" fill="#111111"/>
+    </g>
+  </g>
+
+  <g>
+    <rect x="798" y="478" width="244" height="308" rx="26" fill="#FFFDFC"/>
+    <text x="830" y="528" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3" fill="#A88654">03</text>
+    <text x="830" y="570" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#111111">Hosted</text>
+    <text x="830" y="614" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-style="italic" fill="#111111">comfort</text>
+    <text x="830" y="660" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#514C47">Central kitchen, parcel</text>
+    <text x="830" y="692" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#514C47">assistance, and service</text>
+    <text x="830" y="724" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#514C47">support that feels invisible.</text>
+    <rect x="852" y="746" width="136" height="24" rx="12" fill="#F2ECE3"/>
+    <g transform="translate(854 725)">
+      <rect x="26" y="24" width="108" height="68" rx="18" fill="#F1D7A7"/>
+      <path d="M80 18C80 34 64 48 42 48C46 30 57 22 80 18Z" fill="#111111"/>
+      <path d="M64 42C94 42 118 30 126 16C136 26 142 40 142 56C142 76 126 92 106 92H38C18 92 2 76 2 56C2 40 8 26 18 16C26 30 50 42 64 42Z" stroke="#111111" stroke-width="5" fill="none"/>
+    </g>
+  </g>
+
+  <g>
+    <rect x="1060" y="478" width="244" height="308" rx="26" fill="#FFFDFC"/>
+    <text x="1092" y="528" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3" fill="#A88654">04</text>
+    <text x="1092" y="570" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" fill="#111111">Move</text>
+    <text x="1092" y="614" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-style="italic" fill="#111111">seamlessly</text>
+    <text x="1092" y="660" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#514C47">EV charging, quick pick-up</text>
+    <text x="1092" y="692" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#514C47">routes, and exits planned</text>
+    <text x="1092" y="724" font-family="Arial, Helvetica, sans-serif" font-size="23" fill="#514C47">for smoother departures.</text>
+    <rect x="1114" y="746" width="136" height="24" rx="12" fill="#F2ECE3"/>
+    <g transform="translate(1114 724)">
+      <path d="M30 86H136" stroke="#111111" stroke-width="5" stroke-linecap="round"/>
+      <path d="M50 86V46C50 34 60 24 72 24H108C120 24 130 34 130 46V86" stroke="#111111" stroke-width="5"/>
+      <path d="M84 44L72 64H90L78 86" stroke="#111111" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="66" cy="86" r="8" fill="#111111"/>
+      <circle cx="116" cy="86" r="8" fill="#111111"/>
+    </g>
+  </g>
+
+  <text x="126" y="862" font-family="Arial, Helvetica, sans-serif" font-size="20" letter-spacing="3" fill="#8E7961">OPTION A  CURVED JOURNEY</text>
+  <text x="126" y="894" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#514C47">Best if you want the reference image feel: airy, centered headline, playful vectors, and an easy four-card story.</text>
+</svg>

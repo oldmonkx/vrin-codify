@@ -14,6 +14,7 @@ export default function Location() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="text-[2.25rem] md:text-6xl font-sans tracking-tighter font-medium mb-6 text-brand-paper leading-[1.1]"
           >
             {locationContent.headingLine1} <span className="font-serif italic bg-clip-text text-transparent bg-gradient-to-r from-brand-gold-deep to-brand-gold font-light">{locationContent.headingLine2}</span>

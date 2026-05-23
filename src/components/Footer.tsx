@@ -17,6 +17,7 @@ export default function Footer({ onBookVisit }: { onBookVisit: () => void }) {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="text-6xl md:text-8xl lg:text-[100px] font-sans tracking-tighter font-medium mb-6 leading-[0.9]"
           >
             {footerContent.headingLine1} <br />
