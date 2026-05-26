@@ -61,7 +61,7 @@ export const contentDraft = {
     headingLine1: 'Luxury 2/3/4 BHKs',
     headingLine2: 'Minutes Away From Work',
     body:
-      'Live amidst endless sky and architectural grandeur, with a composed address that balances iconic scale and everyday ease.',
+      'Live under open skies, surrounded by grand architecture and a calm everyday lifestyle that feels easy, elevated, and truly complete.',
     stats: [
       { label: 'Spread Across', value: '9.5', suffix: 'acres' },
     ],
