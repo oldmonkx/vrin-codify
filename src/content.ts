@@ -195,7 +195,7 @@ export const contentDraft = {
       {
         title: 'NATURE',
         fullTitle: 'Outdoors & Nature',
-        image: '/optimized/greens.webp',
+        image: '/optimized/outdoors.jpg',
         items: [
           'Central Courtyard',
           'Amphitheatre',
@@ -208,7 +208,7 @@ export const contentDraft = {
       {
         title: 'SOCIAL',
         fullTitle: 'Social & Lifestyle',
-        image: '/optimized/clubhouse.webp',
+        image: '/optimized/convenience-lifestyle.jpg',
         items: [
           'Entrance Plaza',
           'Concierge Desk',
@@ -220,7 +220,7 @@ export const contentDraft = {
       {
         title: 'FITNESS',
         fullTitle: 'Sports & Fitness',
-        image: '/optimized/fitness.webp',
+        image: '/optimized/gym-rope.jpg',
         items: [
           'Swimming Pool',
           "Kids' Pool",
@@ -232,7 +232,7 @@ export const contentDraft = {
       {
         title: 'CONVENIENCE',
         fullTitle: 'Convenience',
-        image: '/optimized/convenience.webp',
+        image: '/optimized/elders.jpg',
         items: [
           'Centralised Kitchen',
           'Pharmacy',
