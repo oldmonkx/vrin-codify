@@ -399,7 +399,7 @@ export const contentDraft = {
         details: ['3 Towers · 330 Units', 'G+23 Floors · 3.5 Acres', '35,000 Sft Clubhouse'],
         rera: 'RERA: P02500003864',
         badge: 'Ready for possession',
-        image: '/optimized/trident-desktop.jpg',
+        image: '/optimized/trident-desktop-new.png',
         imageMobile: '/optimized/trident-mobile.jpg',
       },
       {
