@@ -4,24 +4,6 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const slides = [
   {
-    src: '/optimized/clubhouse-hero.png',
-    alt: 'Vrindavan Clubhouse — 1,35,000 Sq.Ft',
-    caption: 'Clubhouse',
-    sub: '1,35,000 Sq.Ft of Lifestyle',
-  },
-  {
-    src: '/optimized/config-2bhk.webp',
-    alt: 'Landscaped Gardens Across 9.5 Acres',
-    caption: 'Green Quiet',
-    sub: '9.5 Acres of Curated Landscaping',
-  },
-  {
-    src: '/optimized/clubhouse.webp',
-    alt: 'Aerial View — Vrindavan Towers, Kondapur',
-    caption: 'Aerial View',
-    sub: '8 Towers Rising Above Kondapur',
-  },
-  {
     src: '/optimized/clubhouse-new.webp',
     alt: 'World-Class Fitness & Sports Facilities',
     caption: 'Sports & Fitness',
@@ -32,6 +14,18 @@ const slides = [
     alt: 'Premium Clubhouse Social Spaces',
     caption: 'Social Spaces',
     sub: 'Banquet · Co-working · Guest Suites',
+  },
+  {
+    src: '/optimized/clubhouse-hero.png',
+    alt: 'Vrindavan Clubhouse — 1,35,000 Sq.Ft',
+    caption: 'Clubhouse',
+    sub: '1,35,000 Sq.Ft of Lifestyle',
+  },
+  {
+    src: '/optimized/central-courtyard.jpg',
+    alt: 'Landscaped Gardens Across 9.5 Acres',
+    caption: 'Green Quiet',
+    sub: '9.5 Acres of Curated Landscaping',
   },
 ];
 

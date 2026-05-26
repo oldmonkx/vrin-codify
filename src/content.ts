@@ -167,13 +167,13 @@ export const contentDraft = {
         title: 'Double Height Lobbies',
         stat: 'Grand Arrival',
         copy: 'Grand entrance lobbies designed with soaring volumes, elegant finishes, and a refined sense of arrival that welcomes you home in style.',
-        image: '/optimized/clubhouse-hero.png',
+        image: '/optimized/double-height-lobbies.jpg',
       },
       {
         title: 'Green Quiet',
         stat: '9.5 Acres',
         copy: 'Landscaped courtyards, shaded walkways, water features, and calm green pockets create a peaceful retreat within the community, giving every day a quieter, more refreshing rhythm.',
-        image: '/optimized/green-quiet.webp',
+        image: '/optimized/walkway.jpg',
       },
       {
         title: 'Home in the Sky',
