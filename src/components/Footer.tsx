@@ -65,7 +65,7 @@ export default function Footer({ onBookVisit }: { onBookVisit: () => void }) {
                     alt={project.name}
                     loading="lazy"
                     decoding="async"
-                    className="h-full min-h-[230px] w-[40%] object-cover object-right transition-transform duration-[2s] ease-out group-hover:scale-105 md:aspect-[4/5] md:h-auto md:min-h-0 md:w-full md:object-cover md:object-center"
+                    className="h-full min-h-[230px] w-[40%] object-cover object-right transition-transform duration-[2s] ease-out group-hover:scale-105 md:aspect-[4/5] md:h-auto md:min-h-0 md:w-full md:object-cover md:object-center md:brightness-[0.84] md:saturate-[0.72] md:contrast-[0.94]"
                   />
                 </picture>
 
