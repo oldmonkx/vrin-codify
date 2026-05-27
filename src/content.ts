@@ -148,7 +148,7 @@ export const contentDraft = {
         cta: 'Get Price Sheet',
       },
       {
-        type: '4 BHK Premium',
+        type: '4 BHK',
         size: '2790 – 3375 Sq.Ft',
         towers: 'A, B, C, D',
         image: '/optimized/config-4bhk-plan.svg',
