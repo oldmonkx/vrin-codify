@@ -16,16 +16,40 @@ const slides = [
     sub: 'Banquet · Co-working · Guest Suites',
   },
   {
-    src: '/optimized/clubhouse-hero.png',
+    src: '/optimized/club.jpg',
     alt: 'Vrindavan Clubhouse — 1,35,000 Sq.Ft',
     caption: 'Clubhouse',
     sub: '1,35,000 Sq.Ft of Lifestyle',
   },
   {
-    src: '/optimized/central-courtyard.jpg',
+    src: '/optimized/double-lobbies.jpg',
     alt: 'Landscaped Gardens Across 9.5 Acres',
     caption: 'Green Quiet',
     sub: '9.5 Acres of Curated Landscaping',
+  },
+  {
+    src: '/optimized/court.jpg',
+    alt: 'Professional Sports Courts',
+    caption: 'Sports Courts',
+    sub: 'Tennis, Badminton & Basketball',
+  },
+  {
+    src: '/optimized/entrance.jpg',
+    alt: 'Grand Entrance Gateway',
+    caption: 'Grand Entrance',
+    sub: 'Welcome to Vrindavan',
+  },
+  {
+    src: '/optimized/gym.jpg',
+    alt: 'State-of-the-Art Fitness Center',
+    caption: 'Fitness Center',
+    sub: 'Modern Strength & Cardio Equipment',
+  },
+  {
+    src: '/optimized/restraunt.jpg',
+    alt: 'Premium Restaurant Dining',
+    caption: 'Fine Dining',
+    sub: 'In-house Restaurant & Cafe Lounge',
   },
 ];
 

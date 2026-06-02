@@ -167,13 +167,13 @@ export const contentDraft = {
         title: 'Double Height Lobbies',
         stat: 'Grand Arrival',
         copy: 'Grand entrance lobbies designed with soaring volumes, elegant finishes, and a refined sense of arrival that welcomes you home in style.',
-        image: '/optimized/double-height-lobbies.jpg',
+        image: '/optimized/double-lobbies.jpg',
       },
       {
         title: 'Green Quiet',
         stat: '9.5 Acres',
         copy: 'Landscaped courtyards, shaded walkways, water features, and calm green pockets create a peaceful retreat within the community, giving every day a quieter, more refreshing rhythm.',
-        image: '/optimized/walkway.jpg',
+        image: '/optimized/lady-height.jpg',
       },
       {
         title: 'Home in the Sky',
@@ -294,73 +294,81 @@ export const contentDraft = {
     visible: [
       {
         title: 'Structure',
-        desc: 'RCC shear wall technology with M40-grade concrete; seismically designed for zone II compliance',
+        desc: 'RCC foundation and RCC framed structure.',
       },
       {
-        title: 'Flooring | Living & Dining',
-        desc: '1200 x 1800 mm premium vitrified tiles in living, dining and master bedroom',
+        title: 'Super Structure',
+        desc: 'Aluminum framework and shear wall technology.',
       },
       {
-        title: 'Flooring | Bedrooms',
-        desc: '800 x 1200 mm vitrified tiles in all bedrooms; anti-skid ceramic tiles on balconies',
+        title: 'Doors/Windows/Ventilator',
+        desc: 'MAIN DOOR: Modular wood frame with flush shutter fixed with reputed make hardware. INTERNAL DOOR: Engineered doors fixed with reputed make hardware. FRENCH DOORS: Aluminium/UPVC sliding door with glass. WINDOWS: Aluminium/UPVC sliding doors with glass with provision for mesh shutter. RESTROOM: UPVC Ventilator and fixed glass.',
       },
       {
-        title: 'Walls & Paint',
-        desc: 'Internal: gypsum plaster with premium acrylic emulsion; external: weatherproof texture paint',
+        title: 'Painting',
+        desc: 'INTERNAL: Gypsum plastering/smooth putty finish with two coats of premium acrylic emulsion paint of reputed make over a coat of primer. EXTERNAL: Textured finish and two coats of weatherproof exterior emulsion paint of reputed make.',
+      },
+      {
+        title: 'Flooring',
+        desc: 'LIVING/DINING: 1200 x 1800 mm size vitrified tile double charged / GVT of reputed make. MASTER BEDROOM: 1200 x 1800mm size vitrified tile charged / GVT of reputed make. OTHER BEDROOMS: 1200 x 1800mm size vitrified tile charged / GVT of reputed make. BATHROOMS: Anti-skid tiles of reputed make.',
+      },
+      {
+        title: 'Electrical',
+        desc: 'Miniature circuit breakers (MCB) for each distribution board of reputed make. Modular electrical switches of reputed make. Concealed conduit wiring with copper cables in all rooms for light, fan and plug points. Power points for indoor units of air conditioner in living/dining and all rooms. Sub meter for each apartment.',
       },
     ],
     hidden: [
       {
-        title: 'Main Door',
-        desc: '8-ft engineered teak wood frame with decorative laminate and heavy-duty hardware',
-      },
-      {
-        title: 'Windows',
-        desc: 'UPVC sliding windows with tinted glass; MS railing with toughened glass on all balconies',
-      },
-      {
-        title: 'Kitchen',
-        desc: 'Black galaxy granite counter, SS sink, ceramic dado tiling up to 600 mm, provision for chimney and RO',
+        title: 'Kitchen Utility',
+        desc: 'Utility area Provision for dishwasher and washing machine in the utility.',
       },
       {
         title: 'Bathrooms',
-        desc: 'Floor-to-ceiling glazed tiles; branded CP fittings (Jaquar or equivalent); wall-hung EWC',
+        desc: 'Wall hung wash basin/countertop EWC with concealed flush valve of reputed make. Single lever fixtures with wall mixer cum shower. All CP fittings of reputed make. All sanitary wares of reputed make.',
       },
       {
-        title: 'Electrical',
-        desc: 'MCB / ELCB distribution panel; concealed copper wiring; AC power points in all bedrooms and living room',
+        title: 'Dadoing Utility',
+        desc: 'Glazed ceramic tiles up to 3\' height near the wash area.',
       },
       {
-        title: 'Power Backup',
-        desc: '100% DG backup for all common areas and lifts; limited backup for each apartment',
+        title: 'Telecom/ I-Net/ Cable TV',
+        desc: 'Provision for Internet, DTH, telephone, intercom.',
       },
       {
         title: 'Lifts',
-        desc: '2 high-speed passenger lifts + 1 service lift per tower (Otis / Mitsubishi or equivalent)',
+        desc: 'High speed automatic passenger lifts with rescue device with V3F for energy efficiency of reputed make. Dedicated lift for good\'s service.',
       },
       {
-        title: 'Security',
-        desc: 'Video door phone, perimeter CCTV, boom barriers at entry/exit, 24 x 7 manned security',
+        title: 'Facility for Differently Abled People',
+        desc: 'Access ramps at all entrance areas shall be provided for differently abled.',
+      },
+      {
+        title: 'WTP & STP',
+        desc: 'Water treated to potable water standards centrally. Sewage treatment plant with filtration as per norms, treated sewage water will be used for landscaping and flushing purpose. Rainwater harvesting pits as per norms for recharging ground water.',
+      },
+      {
+        title: 'LPG Reticulation',
+        desc: 'Supply of gas from centralized gas bank to all individual flats with meters.',
       },
       {
         title: 'Parking',
-        desc: '4-level stilt + basement car parking; EV charging provision at designated bays',
+        desc: '4 Level of car parking available in the project.',
       },
       {
-        title: 'Water Supply',
-        desc: 'WTP to potable standards + sewage treatment plant (STP); underground sump with overhead tank per tower',
+        title: 'Car Wash Facility',
+        desc: 'Car wash facility will be provided at the parking floor levels.',
+      },
+      {
+        title: 'Security, Surveillance',
+        desc: 'CCTV cameras around the campus for surveillance.',
       },
       {
         title: 'Fire Safety',
-        desc: 'Pressurised fire hydrant system, automatic sprinklers, smoke detectors and dedicated fire escape stairway on every floor',
+        desc: 'Fire hydrant and fire sprinkler system in the basement as per the NOC norms. Fire alarm and public address system on all floors and parking areas(basements) as per the NOC norms.',
       },
       {
-        title: 'Landscaping',
-        desc: 'Professionally designed podium garden, water features, tree-lined promenades across 9.5 acres',
-      },
-      {
-        title: 'Smart Home',
-        desc: 'Pre-wired for home automation; intercom network connecting apartments to lobby',
+        title: 'Generator',
+        desc: 'Metering for each unit with auto mains failure feature.',
       },
     ],
   },

@@ -54,7 +54,7 @@ export default function Footer({ onBookVisit }: { onBookVisit: () => void }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.6 }}
-                className="group relative flex flex-row-reverse overflow-hidden rounded-[1.35rem] bg-[linear-gradient(180deg,rgba(31,18,28,0.98)_0%,rgba(18,10,16,0.98)_100%)] shadow-[0_18px_42px_rgba(25,14,22,0.18)] md:min-h-0 md:flex-col md:rounded-2xl md:border md:border-brand-gold/14 md:shadow-[0_18px_45px_rgba(31,18,28,0.16)]"
+                className="group relative flex flex-row-reverse overflow-hidden rounded-[1.35rem] bg-[linear-gradient(180deg,rgba(43,24,40,0.98)_0%,rgba(23,13,21,0.98)_100%)] shadow-[0_18px_42px_rgba(25,14,22,0.18)] border border-brand-gold/22 md:min-h-0 md:flex-col md:rounded-2xl md:shadow-[0_18px_45px_rgba(31,18,28,0.16)]"
               >
                 <picture className="contents">
                   {'imageMobile' in project && project.imageMobile ? (
@@ -65,11 +65,11 @@ export default function Footer({ onBookVisit }: { onBookVisit: () => void }) {
                     alt={project.name}
                     loading="lazy"
                     decoding="async"
-                    className="h-full min-h-[230px] w-[40%] object-cover object-right transition-transform duration-[2s] ease-out group-hover:scale-105 md:aspect-[4/5] md:h-auto md:min-h-0 md:w-full md:object-cover md:object-center md:brightness-[0.84] md:saturate-[0.72] md:contrast-[0.94]"
+                    className="h-full min-h-[230px] w-[40%] object-cover object-right transition-transform duration-[2s] ease-out group-hover:scale-105 md:aspect-[4/5] md:h-auto md:min-h-0 md:w-full md:object-cover md:object-center md:brightness-[0.95] md:saturate-[0.92] md:contrast-[0.98]"
                   />
                 </picture>
 
-                <div className="flex min-h-[230px] flex-1 flex-col border-r border-brand-gold/14 bg-[linear-gradient(180deg,rgba(30,17,27,0.98)_0%,rgba(18,10,16,1)_100%)] px-5 py-6 md:min-h-[154px] md:border-r-0 md:border-t md:border-brand-gold/16 md:px-6 md:py-5">
+                <div className="flex min-h-[230px] flex-1 flex-col border-r border-brand-gold/22 bg-[linear-gradient(180deg,rgba(41,23,38,0.98)_0%,rgba(23,13,21,1)_100%)] px-5 py-6 md:min-h-[154px] md:border-r-0 md:border-t md:border-brand-gold/26 md:px-6 md:py-5">
                   <div className="mb-2 flex flex-col gap-1">
                     <div className="flex flex-wrap items-start gap-2 md:block">
                       <h4 className="font-sans text-2xl font-bold leading-none tracking-tight text-white md:text-xl">{project.name}</h4>
@@ -127,14 +127,7 @@ export default function Footer({ onBookVisit }: { onBookVisit: () => void }) {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-x-5 gap-y-3 mb-4 text-[9px] uppercase tracking-[0.2em] font-medium text-brand-paper/32">
-          {footerContent.trustBar.map((item, index) => (
-            <React.Fragment key={item}>
-              {index > 0 ? <span>·</span> : null}
-              <span>{item}</span>
-            </React.Fragment>
-          ))}
-        </div>
+
 
         <div className="flex justify-center gap-6 mb-8 text-[9px] uppercase tracking-[0.1em] text-brand-paper/24">
           <a href="/privacy" className="hover:text-brand-paper/48 transition-colors">{footerContent.legalLinks.privacy}</a>

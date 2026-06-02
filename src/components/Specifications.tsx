@@ -16,7 +16,7 @@ const SpecRow: React.FC<SpecRowProps> = ({ title, desc, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.45, delay: index * 0.03, ease: [0.16, 1, 0.3, 1] }}
-      className="border-t border-white/6 py-5 first:border-t-0 first:pt-0"
+      className="border-t border-white/6 py-5 first:border-t-0 first:pt-0 lg:[&:nth-child(-n+2)]:border-t-0 lg:[&:nth-child(-n+2)]:pt-0"
     >
       <p className="text-[11px] uppercase tracking-[0.24em] text-brand-gold/74">{title}</p>
       <p className="mt-3 text-sm leading-7 text-brand-ink-light/84">{desc}</p>

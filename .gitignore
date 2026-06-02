@@ -10,3 +10,4 @@ dist/
 .devserver*.log
 output/
 .agent/
+*.pdf
