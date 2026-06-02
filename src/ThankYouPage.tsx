@@ -2,7 +2,7 @@ import React from 'react';
 import { MessageCircle, Phone } from 'lucide-react';
 
 const CALL_NUMBER = '9177634477';
-const WHATSAPP_URL = 'https://wa.me/919177634477';
+const WHATSAPP_URL = 'https://wa.me/919177634477?text=Hello%2C%20I%20want%20more%20info';
 
 export default function ThankYouPage() {
   return (

@@ -376,7 +376,7 @@ export const contentDraft = {
   mobileBottomBar: {
     phoneHref: 'tel:9177634477',
     phoneLabel: 'Call',
-    whatsappHref: 'https://wa.me/919177634477',
+    whatsappHref: 'https://wa.me/919177634477?text=Hello%2C%20I%20want%20more%20info',
     whatsappLabel: 'WhatsApp',
     brochureLabel: 'Brochure',
   },
