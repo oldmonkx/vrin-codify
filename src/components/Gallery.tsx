@@ -16,37 +16,37 @@ const slides = [
     sub: 'Banquet · Co-working · Guest Suites',
   },
   {
-    src: '/optimized/club.jpg',
+    src: '/optimized/club.webp',
     alt: 'Vrindavan Clubhouse — 1,35,000 Sq.Ft',
     caption: 'Clubhouse',
     sub: '1,35,000 Sq.Ft of Lifestyle',
   },
   {
-    src: '/optimized/double-lobbies.jpg',
+    src: '/optimized/double-lobbies.webp',
     alt: 'Landscaped Gardens Across 9.5 Acres',
     caption: 'Green Quiet',
     sub: '9.5 Acres of Curated Landscaping',
   },
   {
-    src: '/optimized/court.jpg',
+    src: '/optimized/court.webp',
     alt: 'Professional Sports Courts',
     caption: 'Sports Courts',
     sub: 'Tennis, Badminton & Basketball',
   },
   {
-    src: '/optimized/entrance.jpg',
+    src: '/optimized/entrance.webp',
     alt: 'Grand Entrance Gateway',
     caption: 'Grand Entrance',
     sub: 'Welcome to Vrindavan',
   },
   {
-    src: '/optimized/gym.jpg',
+    src: '/optimized/gym.webp',
     alt: 'State-of-the-Art Fitness Center',
     caption: 'Fitness Center',
     sub: 'Modern Strength & Cardio Equipment',
   },
   {
-    src: '/optimized/restraunt.jpg',
+    src: '/optimized/restraunt.webp',
     alt: 'Premium Restaurant Dining',
     caption: 'Fine Dining',
     sub: 'In-house Restaurant & Cafe Lounge',
@@ -149,6 +149,8 @@ export default function Gallery() {
                 key={slides[current].src}
                 src={slides[current].src}
                 alt={slides[current].alt}
+                loading="lazy"
+                decoding="async"
                 initial={{ opacity: 0, scale: 1.04 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}
