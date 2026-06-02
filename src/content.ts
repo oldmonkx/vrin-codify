@@ -269,7 +269,7 @@ export const contentDraft = {
     body:
       'Designed around convenience and connectivity, this address brings the city closer without compromising on calm. Whether it’s work, school, healthcare, shopping, or leisure, every essential part of daily life feels easier to reach.',
     proximities: [
-      { label: 'HITECH City', time: '3 min' },
+      { label: 'HITEC City', time: '12 min' },
       { label: 'Financial District', time: '8 min' },
       { label: 'Sancta Maria School', time: '2 min' },
       { label: 'KIMS Hospital', time: '10 min' },
