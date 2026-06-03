@@ -48,13 +48,16 @@ export default function Footer({ onBookVisit }: { onBookVisit: () => void }) {
 
           <div className="flex flex-col gap-6 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-5">
             {otherProjects.map((project, i) => (
-              <motion.div
+              <motion.a
                 key={i}
+                href={'link' in project ? project.link : '#'}
+                target="_blank"
+                rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.08, duration: 0.6 }}
-                className="group relative flex flex-row-reverse overflow-hidden rounded-[1.35rem] bg-[linear-gradient(180deg,rgba(43,24,40,0.98)_0%,rgba(23,13,21,0.98)_100%)] shadow-[0_18px_42px_rgba(25,14,22,0.18)] border border-brand-gold/22 md:min-h-0 md:flex-col md:rounded-2xl md:shadow-[0_18px_45px_rgba(31,18,28,0.16)]"
+                className="group relative flex flex-row-reverse overflow-hidden rounded-[1.35rem] bg-[linear-gradient(180deg,rgba(43,24,40,0.98)_0%,rgba(23,13,21,0.98)_100%)] shadow-[0_18px_42px_rgba(25,14,22,0.18)] border border-brand-gold/22 md:min-h-0 md:flex-col md:rounded-2xl md:shadow-[0_18px_45px_rgba(31,18,28,0.16)] hover:border-brand-gold/50 transition-colors duration-300 block"
               >
                 <picture className="contents">
                   {'imageMobile' in project && project.imageMobile ? (
@@ -97,7 +100,7 @@ export default function Footer({ onBookVisit }: { onBookVisit: () => void }) {
                     ) : null}
                   </div>
                 </div>
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </div>

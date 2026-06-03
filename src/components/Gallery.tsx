@@ -4,6 +4,12 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const slides = [
   {
+    src: '/optimized/entrance.jpg',
+    alt: 'Grand Entrance Gateway',
+    caption: 'Grand Entrance',
+    sub: 'Welcome to Vrindavan',
+  },
+  {
     src: '/optimized/clubhouse-new.webp',
     alt: 'World-Class Fitness & Sports Facilities',
     caption: 'Sports & Fitness',
@@ -22,7 +28,7 @@ const slides = [
     sub: '1,35,000 Sq.Ft of Lifestyle',
   },
   {
-    src: '/optimized/double-lobbies.jpg',
+    src: '/optimized/greenquiet.webp',
     alt: 'Landscaped Gardens Across 9.5 Acres',
     caption: 'Green Quiet',
     sub: '9.5 Acres of Curated Landscaping',
@@ -32,12 +38,6 @@ const slides = [
     alt: 'Professional Sports Courts',
     caption: 'Sports Courts',
     sub: 'Tennis, Badminton & Basketball',
-  },
-  {
-    src: '/optimized/entrance.jpg',
-    alt: 'Grand Entrance Gateway',
-    caption: 'Grand Entrance',
-    sub: 'Welcome to Vrindavan',
   },
   {
     src: '/optimized/gym.jpg',

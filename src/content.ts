@@ -173,7 +173,7 @@ export const contentDraft = {
         title: 'Green Quiet',
         stat: '9.5 Acres',
         copy: 'Landscaped courtyards, shaded walkways, water features, and calm green pockets create a peaceful retreat within the community, giving every day a quieter, more refreshing rhythm.',
-        image: '/optimized/lady-height.jpg',
+        image: '/optimized/central.webp',
       },
       {
         title: 'Home in the Sky',
@@ -398,6 +398,7 @@ export const contentDraft = {
         rera: 'RERA: P02400006832',
         image: '/optimized/aria-desktop.jpg',
         imageMobile: '/optimized/aria-mobile.jpg',
+        link: 'https://namishree.com/projects/3-bhk-flats-for-sale-in-nagole-hyderabad-aria/',
       },
       {
         name: 'Trident',
@@ -409,6 +410,7 @@ export const contentDraft = {
         badge: 'Ready for possession',
         image: '/optimized/trident-desktop-new.png',
         imageMobile: '/optimized/trident-mobile.jpg',
+        link: 'https://namishree.com/projects/3-bhk-flats-for-sale-in-vanasthalipuram-hyderabad-trident/',
       },
       {
         name: 'Jewel',
@@ -419,6 +421,7 @@ export const contentDraft = {
         rera: 'RERA: P02500007768',
         image: '/optimized/jewel-desktop.jpg',
         imageMobile: '/optimized/jewel-mobile.jpg',
+        link: 'https://namishree.com/projects/jewel-3-bhk-flats-for-sale-in-lb-nagar/',
       },
       {
         name: 'Twin Towers',
@@ -430,6 +433,7 @@ export const contentDraft = {
         badge: 'Ready To Move',
         image: '/optimized/twin-towers-desktop.jpg',
         imageMobile: '/optimized/twin-towers-mobile.jpg',
+        link: 'https://namishree.com/projects/bps-twin-towers/',
       },
     ],
     contactLabel: 'Contact',
