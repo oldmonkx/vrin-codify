@@ -140,6 +140,7 @@ export default function Specifications({ onDownload }: { onDownload: () => void 
           </div>
         </div>
       </div>
+      {/* placeholder */}
     </section>
   );
 }

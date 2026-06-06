@@ -13,6 +13,8 @@ export default function Configurations({ onGetPrice }: { onGetPrice: () => void 
       <img
         src={configurationsContent.featureImage}
         alt="Vrindavan luxury residential towers"
+        width={1920}
+        height={1080}
         loading="lazy"
         decoding="async"
         className="absolute inset-0 h-full w-full object-cover object-[center_10%]"
@@ -98,6 +100,7 @@ export default function Configurations({ onGetPrice }: { onGetPrice: () => void 
 
         </div>
       </div>
+      {/* placeholder */}
     </section>
   );
 }

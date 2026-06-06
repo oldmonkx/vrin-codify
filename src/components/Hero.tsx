@@ -67,6 +67,8 @@ export default function Hero({ onDownloadBrochure }: HeroProps) {
           <img
             src={heroContent.backgroundImage}
             alt="Vrindavan towers"
+            width={1920}
+            height={1080}
             fetchPriority="high"
             decoding="async"
             className="h-full w-full object-cover object-center"
@@ -86,7 +88,7 @@ export default function Hero({ onDownloadBrochure }: HeroProps) {
           className="min-w-0 max-w-none"
         >
           {/* Vrindavan Logo */}
-          <img src={heroContent.logo} alt="Vrindavan" className="h-[3.675rem] w-auto md:h-[4.2rem] lg:h-[4.725rem]" />
+          <img src={heroContent.logo} alt="Vrindavan" width={180} height={50} className="h-[3.675rem] w-auto md:h-[4.2rem] lg:h-[4.725rem]" />
 
           {/* Tagline & Headline */}
           <div className="mt-6 lg:mt-7">

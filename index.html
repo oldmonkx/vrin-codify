@@ -30,12 +30,79 @@
     <!-- ════════════════════════════════════════════════════════════
          SEO & SOCIAL — edit these freely
          ════════════════════════════════════════════════════════════ -->
-    <title>Vrindavan by Namishree · Kondapur, Hyderabad</title>
+    <title>Vrindavan by Namishree | Gated Community 2, 3 & 4 BHK Apartments in Kondapur, Hyderabad</title>
     <meta name="description" content="Live in the heart of Kondapur. 8 Towers · G+52 · 9.75 acres · 1846 premium residences. TGRERA P02400008653." />
-    <meta property="og:title" content="Vrindavan by Namishree · Kondapur" />
-    <meta property="og:description" content="Sky-high 2/3/4 BHK residences across 9.75 acres in Kondapur, Hyderabad." />
+    <meta property="og:title" content="Vrindavan by Namishree | Kondapur, Hyderabad" />
+    <meta property="og:description" content="Sky-high 2/3/4 BHK luxury gated community residences across 9.5 acres in Kondapur, Hyderabad." />
     <meta property="og:type" content="website" />
     <!-- <meta property="og:image" content="https://yourdomain.com/og-image.jpg" /> -->
+
+    <!-- Preload LCP Images -->
+    <link rel="preload" as="image" href="/optimized/hero-desktop.webp" media="(min-width: 768px)" type="image/webp" />
+    <link rel="preload" as="image" href="/optimized/hero-mobile.webp" media="(max-width: 767px)" type="image/webp" />
+
+    <!-- Google Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ApartmentComplex",
+          "@id": "https://vrindavan.namishree.com/#project",
+          "name": "Vrindavan by Namishree",
+          "description": "Sky-high 2/3/4 luxury gated community apartments across 9.5 acres in Kondapur, Hyderabad. Project features a 1.35 Lakh Sft Clubhouse and 50+ lifestyle amenities.",
+          "url": "https://vrindavan.namishree.com",
+          "telephone": "+919177634477",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Kondapur",
+            "addressLocality": "Kondapur, Serilingampalle",
+            "addressRegion": "Hyderabad, Telangana",
+            "postalCode": "500084",
+            "addressCountry": "IN"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "17.4619",
+            "longitude": "78.3688"
+          },
+          "image": [
+            "https://vrindavan.namishree.com/optimized/entrance.jpg",
+            "https://vrindavan.namishree.com/optimized/central.webp"
+          ],
+          "numberOfAccommodationUnits": "1846",
+          "tourBookingPage": "https://vrindavan.namishree.com/#overview",
+          "offers": {
+            "@type": "AggregateOffer",
+            "priceCurrency": "INR",
+            "offeredBy": {
+              "@type": "RealEstateAgent",
+              "@id": "https://namishree.com/#agent",
+              "name": "Namishree Group",
+              "url": "https://namishree.com"
+            }
+          }
+        },
+        {
+          "@type": "RealEstateAgent",
+          "@id": "https://namishree.com/#agent",
+          "name": "Namishree Group",
+          "url": "https://namishree.com",
+          "logo": "https://vrindavan.namishree.com/namishree-logo-color.svg",
+          "telephone": "+919177634477",
+          "email": "info@namishree.com",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "15th Floor, T19 Towers, Ranigunj",
+            "addressLocality": "Secunderabad, Hyderabad",
+            "addressRegion": "Telangana",
+            "postalCode": "500003",
+            "addressCountry": "IN"
+          }
+        }
+      ]
+    }
+    </script>
 
     <!-- ════════════════════════════════════════════════════════════
          GOOGLE SEARCH CONSOLE — paste the content value only.
@@ -62,12 +129,13 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <!-- Meta Pixel Code -->
-    <noscript><img height="1" width="1" style="display:none"
+    <noscript><img height="1" width="1" style="display:none" alt="Facebook Pixel"
     src="https://www.facebook.com/tr?id=2721216941596811&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <!-- placeholder -->
   </body>
 </html>
 
