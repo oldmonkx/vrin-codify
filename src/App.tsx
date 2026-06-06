@@ -2,6 +2,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 import { contentDraft } from './content';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import DisclaimerModal from './components/DisclaimerModal';
 const ProjectHighlights = React.lazy(() => import('./components/ProjectHighlights'));
 const Configurations = React.lazy(() => import('./components/Configurations'));
 const Highlights = React.lazy(() => import('./components/Highlights'));
@@ -30,7 +31,8 @@ export default function App() {
   }, [isModalOpen]);
 
   return (
-    <div className="relative min-h-screen bg-brand-paper selection:bg-brand-magenta/20 selection:text-brand-ink overflow-x-hidden">
+    <div className="relative min-h-screen bg-brand-paper selection:bg-brand-secondary-accent/20 selection:text-brand-ink overflow-x-hidden">
+      <DisclaimerModal />
       <Header onBookVisit={() => openModal(interactionContent.modalTitles.bookSiteVisit)} />
       
       <main>

@@ -101,3 +101,4 @@ export default function Configurations({ onGetPrice }: { onGetPrice: () => void 
     </section>
   );
 }
+/* placeholder */
