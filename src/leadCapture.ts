@@ -59,6 +59,38 @@ export async function submitLead({
     ...extra,
   };
 
+  // Submit to Realx CRM if configured
+  const crmUrl = import.meta.env.VITE_REALX_CRM_API_URL;
+  if (crmUrl) {
+    try {
+      const crmPayload = {
+        business_group: import.meta.env.VITE_REALX_CRM_BUSINESS_GROUP || 'NAMISHREE',
+        source: import.meta.env.VITE_REALX_CRM_SOURCE || 'Website',
+        source_id: import.meta.env.VITE_REALX_CRM_SOURCE_ID || '1',
+        key: import.meta.env.VITE_REALX_CRM_KEY || 'p3EasMX8M8qe7VU8yZdF',
+        project_name: import.meta.env.VITE_REALX_CRM_PROJECT_NAME || 'Namishree Vrindavan',
+        lead_name: name.trim(),
+        primary_email: '',
+        primary_phone: normalizedPhone,
+        lead_comment: `Lead submitted via ${formTitle} form on Landing Page.`,
+      };
+
+      const crmResponse = await fetch(crmUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(crmPayload),
+      });
+
+      if (!crmResponse.ok) {
+        console.error(`Realx CRM submission returned status ${crmResponse.status}`);
+      }
+    } catch (crmError) {
+      console.error('Failed to submit to Realx CRM:', crmError);
+    }
+  }
+
   const response = await fetch(webhookUrl, {
     method: 'POST',
     headers: {
