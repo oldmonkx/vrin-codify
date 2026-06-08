@@ -79,6 +79,8 @@ export default function Amenities({ onDownloadBrochure }: AmenitiesProps) {
                 <img
                   src={group.image}
                   alt={group.fullTitle}
+                  width={600}
+                  height={800}
                   loading="lazy"
                   decoding="async"
                   className={`absolute inset-0 h-full w-full object-cover transition-[transform,opacity] duration-[1.5s] ease-out ${

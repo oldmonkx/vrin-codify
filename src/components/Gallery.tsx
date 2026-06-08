@@ -149,6 +149,9 @@ export default function Gallery() {
                 key={slides[current].src}
                 src={slides[current].src}
                 alt={slides[current].alt}
+                width={1600}
+                height={900}
+                loading="lazy"
                 initial={{ opacity: 0, scale: 1.04 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.98 }}

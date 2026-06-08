@@ -2,17 +2,18 @@ import React, { useState, useEffect, Suspense } from 'react';
 import { contentDraft } from './content';
 import Header from './components/Header';
 import Hero from './components/Hero';
+
 const ProjectHighlights = React.lazy(() => import('./components/ProjectHighlights'));
 const Configurations = React.lazy(() => import('./components/Configurations'));
 const Highlights = React.lazy(() => import('./components/Highlights'));
 const Amenities = React.lazy(() => import('./components/Amenities'));
 const Gallery = React.lazy(() => import('./components/Gallery'));
-import ConstructionUpdates from './components/ConstructionUpdates';
+const ConstructionUpdates = React.lazy(() => import('./components/ConstructionUpdates'));
 const Location = React.lazy(() => import('./components/Location'));
 const Specifications = React.lazy(() => import('./components/Specifications'));
-import Footer from './components/Footer';
-import MobileBottomBar from './components/MobileBottomBar';
-import LeadModal from './components/LeadModal';
+const Footer = React.lazy(() => import('./components/Footer'));
+const MobileBottomBar = React.lazy(() => import('./components/MobileBottomBar'));
+const LeadModal = React.lazy(() => import('./components/LeadModal'));
 
 export default function App() {
   const interactionContent = contentDraft.interactions;
@@ -30,7 +31,7 @@ export default function App() {
   }, [isModalOpen]);
 
   return (
-    <div className="relative min-h-screen bg-brand-paper selection:bg-brand-magenta/20 selection:text-brand-ink overflow-x-hidden">
+    <div className="relative min-h-screen bg-brand-paper selection:bg-brand-secondary-accent/20 selection:text-brand-ink overflow-x-hidden">
       <Header onBookVisit={() => openModal(interactionContent.modalTitles.bookSiteVisit)} />
       
       <main>
@@ -47,14 +48,15 @@ export default function App() {
         </Suspense>
       </main>
 
-      <Footer onBookVisit={() => openModal(interactionContent.modalTitles.bookSiteVisit)} />
-      <MobileBottomBar onBrochure={() => openModal(interactionContent.modalTitles.downloadBrochure)} />
-
-      <LeadModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
-        title={modalTitle}
-      />
+      <Suspense fallback={null}>
+        <Footer onBookVisit={() => openModal(interactionContent.modalTitles.bookSiteVisit)} />
+        <MobileBottomBar onBrochure={() => openModal(interactionContent.modalTitles.downloadBrochure)} />
+        <LeadModal 
+          isOpen={isModalOpen} 
+          onClose={() => setIsModalOpen(false)} 
+          title={modalTitle}
+        />
+      </Suspense>
     </div>
   );
 }

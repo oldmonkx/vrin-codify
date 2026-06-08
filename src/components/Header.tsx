@@ -25,7 +25,7 @@ export default function Header({ onBookVisit }: HeaderProps) {
         <div className="mx-auto flex h-16 w-[min(100%-1.25rem,1360px)] items-center justify-between px-4 md:px-6">
           {/* Left: Logos */}
           <a href="#overview" className="flex min-w-0 items-center gap-3">
-            <img src="/namishree-logo-white.svg" alt={headerContent.logoAlt} className="h-4 w-auto opacity-90 md:h-5" />
+            <img src="/namishree-logo-white.svg" alt={headerContent.logoAlt} width={100} height={20} className="h-4 w-auto opacity-90 md:h-5" />
           </a>
 
           {/* Center: Nav links */}
@@ -82,7 +82,7 @@ export default function Header({ onBookVisit }: HeaderProps) {
             >
               {/* Mobile logos */}
               <div className="mb-6 flex items-center gap-3">
-                <img src="/namishree-logo-white.svg" alt={headerContent.logoAlt} className="h-4 w-auto opacity-80" />
+                <img src="/namishree-logo-white.svg" alt={headerContent.logoAlt} width={100} height={20} className="h-4 w-auto opacity-80" />
               </div>
 
               <nav className="space-y-2">

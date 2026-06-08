@@ -68,6 +68,8 @@ export default function Highlights() {
                        <img
                          src={h.image}
                          alt={h.title}
+                         width={800}
+                         height={500}
                          loading="lazy"
                          decoding="async"
                          className="h-full w-full object-cover transition-transform duration-[3000ms] ease-out group-hover:scale-[1.03] will-change-transform"

@@ -17,9 +17,8 @@
   --color-brand-ink-muted: #7a6a6e;
 
   --color-brand-cyan: #6cb7c0;
-  --color-brand-violet: #6030a0;
-  --color-brand-magenta: #c0185a;
-
+  --color-brand-primary-accent: #6030a0;
+  --color-brand-secondary-accent: #c0185a;
   --color-brand-gold: #c9a877;
   --color-brand-gold-deep: #a88654;
   --color-brand-gold-pale: #e8d5aa;
@@ -116,7 +115,7 @@
 @layer utilities {
   /* ── Legacy utility classes (kept for backward compat) ── */
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-linear-to-r from-brand-cyan via-brand-violet to-brand-magenta;
+    @apply bg-clip-text text-transparent bg-linear-to-r from-brand-cyan via-brand-primary-accent to-brand-secondary-accent;
   }
   .glass-panel {
     @apply bg-brand-surface/90 border border-white/10 shadow-sm shadow-black/20;
