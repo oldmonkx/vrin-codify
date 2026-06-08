@@ -34,7 +34,6 @@ export default defineConfig(({mode}) => {
               params: {
                 overrides: {
                   cleanupIds: false,
-                  removeViewBox: false,
                 },
               },
             },
